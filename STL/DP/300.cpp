@@ -94,8 +94,7 @@ int main()
 {
     Solution s;
     const size_t N = 8;
-    int arr[N] = {10, 9, 2, 5, 3, 7, 101, 18};
-    std::vector<int> nums(arr, arr+N);
+    vector<int> nums = {10, 9, 2, 5, 3, 7, 101, 18};
     cout<<s.lengthOfLIS(nums);
     return 0;
 }
