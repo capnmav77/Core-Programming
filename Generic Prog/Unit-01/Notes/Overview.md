@@ -20,3 +20,11 @@ Operator Overloading - changing the meaning of a operator using compile time pol
 Type Converter - converts a primitive datatype to another primitive datatype 
     - typecasting 
         - int - float 
+
+Virtual Function -  are functions that are expected to be overridden 
+    allow to create a list of base class pointers and call methods without even knowing the return type of the functions 
+
+Abstract Class 
+    are functions meant to be overridden 
+    they have atleast one pure virtual function 
+    
