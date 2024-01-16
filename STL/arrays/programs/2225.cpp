@@ -42,10 +42,10 @@ public:
     Solution() {
         memset(loss, -1, sizeof loss);
     }
-    vector<vector<int>> findWinners(vector<vector<int>>& matches) {
-        vector<vector<int>> res(2, vector<int>());
+    vector<vector<int> > findWinners(vector<vector<int>>& matches) {
+        vector<vector<int> > res(2, vector<int>());
         res[0].reserve(1024), res[1].reserve(1024);
-        for (const auto& match : matches) {
+        for (const auto & match : matches) {
             int winner = match[0], loser = match[1];
             if (loss[winner] == -1) loss[winner] = 0;
             if (loss[loser] == -1) loss[loser] = 1;
