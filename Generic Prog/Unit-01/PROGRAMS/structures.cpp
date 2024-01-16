@@ -15,12 +15,23 @@ class Example
 {
     public: 
         int a;
+        int *ptr;
+        int b;
         Example(int x){
             a = x;
         }
         Example(Example &obj){
             cout<<"Copy constructor called"<<endl;
             a = obj.a;
+        }
+        //dynamic constructor
+        Example(int n){
+            this->ptr = new int[n];
+        }
+
+        //deligation constructor 
+        Example(int n, int m):Example(n){
+            this->b = m;
         }
 };
 

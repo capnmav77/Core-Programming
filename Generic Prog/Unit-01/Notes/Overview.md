@@ -12,3 +12,5 @@ Constructors and Destructors
         - parameterized 
         - default 
         - copy - takes a refrence from the same constructor 
+
+    - INitializers - if we have multiple variables we need to initialize , but we need to initialize certain vars only , then we use Initializer List 
