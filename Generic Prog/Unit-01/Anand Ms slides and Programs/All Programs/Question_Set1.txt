@@ -1,0 +1,468 @@
+1. What happens when objects s1 and s2 are added?
+string s1 = "Hello";
+string s2 = "World";
+string s3 = (s1+s2).substr(5);
+A. Run-time error
+B. The statements run perfectly
+C. Segmentation fault as two strings cannot be added in C++
+D. Error because s1+s2 will result into string and no string has substr() function
+
+Answer: B
+
+2. A non-member function that is given access to all members of a class within it is declared, is called
+A. Friend function
+B. Operator functions
+C. Access function
+D. None of them
+
+Answer: A
+
+3. ……………… must be either non-static member function or friend functions.
+A. non-static functions
+B. friend functions
+C. member functions
+D. Operator functions
+
+Answer: D
+
+4. Which of the following operators should be preferred to overload as a global function rather than a member method?
+A. prefix ++
+B. Postfix ++
+C. Comparison Operator
+D. Insertion Operator <<
+
+Answer: D
+
+5. Which of the following operators are overloaded by default by the compiler in every user defined classes even if user has not written?
+1) Comparison Operator ( == )
+2) Assignment Operator ( = )
+A. Only 1
+B. Only 2
+C. Both 1 and 2
+D. None of the two
+
+Answer: B
+
+6. Operator overloading is also called …………….. polymorphism.
+A. run time
+B. initial time
+C. compile time
+D. completion time
+
+Answer: C
+
+7. Find output.
+
+#include<iostream>
+using namespace std;
+class Point
+{
+private:
+int x, y;
+public:
+Point() : x(0), y(0) { }
+Point& operator()(int dx, int dy);
+void show() {cout << "x = " << x << ", y = " << y; }
+};
+Point& Point::operator()(int dx, int dy)
+{
+x = dx;
+y = dy;
+return *this;
+}
+int main()
+{
+Point pt;
+pt(3, 2);
+pt.show();
+return 0;
+}
+
+A. x = 3, y = 2
+B. x = 2, y = 3
+C. Compiler Error
+D. None
+
+Answer: A
+
+
+8. What will be the output of the following program?
+#include<iostream>
+#include<string>
+using namespace std;
+class Box
+{
+	int capacity;
+	bool operator<(Box b)
+	{
+		return this->capacity < b.capacity ? true : false;
+	}
+	public:
+		Box(){}
+		Box(double capacity){
+		this->capacity = capacity;
+	}
+};
+
+int main(int argc, char const *argv[]) 
+{
+	Box b1(10);
+	Box b2 = Box(14);
+	if(b1 < b2)
+	{
+		cout<<"Box 2 has large capacity.";
+	}
+	else
+	{
+		cout<<"Box 1 has large capacity.";
+	}
+	return 0;
+}
+
+
+A. Error
+B. Segmentation fault
+C. Box 2 has large capacity
+D. No output
+
+Answer: A
+
+9. Which of the following is not true?
+A. Copy constructor is invoked when a member function returns an object
+B. Copy constructor is invoked whenever object is created
+C. Copy constructor is invoked when an object is passed by reference to constructor
+D. Copy constructor is invoked when an object is passed as a parameter to a member function
+
+Answer: B
+
+
+10. What happens when a class with parameterized constructors and having no default constructor is used in a program and we create an object that needs a zero-argument constructor?
+A. Compile-time error.
+B. Runtime error.
+C. Compile-time error.
+D. Runtime exception.
+
+Answer: A
+
+11. What happens if a user forgets to define a constructor inside a class?
+A. Error occurs
+B. Segmentation fault
+C. Objects are not created properly
+D. Compiler provides a default constructor to avoid faults/errors
+
+Answer: D
+
+12. 1.  A virtual function is a member function of which of the following class?
+
+(A). Derived class
+
+(B). Parent class
+
+(c). base class
+
+(D). Both A and B
+
+Answer: B
+
+13. Which of the following best describes the virtual function?
+
+(A). Function overriding
+
+(B). write a function in the child class that is already present in the parent class
+
+(c). Run time polymorphism
+
+(D). All of these
+
+Answer: D
+
+14. Which statement is true about virtual functions?
+
+(A). Virtual functions can be static members
+
+(B). Virtual functions cannot be static members
+
+(c). Virtual functions must be members of some class
+
+(D). B and C
+
+Answer: D
+
+15. A program can have?
+
+(A). Virtual Constructor
+
+(B). Virtual Destructor
+
+(c). Both of these
+
+(D). None of these
+
+Answer: B
+
+16. What is the output of the following program?
+
+
+#include<iostream>
+using namespace std;
+ 
+class Base
+{
+public:
+    virtual void show() { cout<<" In Base \n"; }
+};
+ 
+class Derived: public Base
+{
+public:
+    void show() { cout<<"In Derived \n"; }
+};
+ 
+int main(void)
+{
+    Base *bp = new Derived;
+    bp->show();
+ 
+    Base &br = *bp;
+    br.show();
+ 
+    return 0;
+}
+
+A
+In Base 
+In Base 
+B
+In Base 
+In Derived
+C
+In Derived
+In Derived
+D
+In Derived
+In Base 
+
+Answer: C
+
+17. Will the following program compile?
+#include <iostream>
+using namespace std;
+class Base {
+public:
+  virtual Base() {}   
+};
+int main() {
+   return 0;
+}
+
+A. YES
+B. NO
+
+Answer: B
+
+
+18. What will be the output of the following program?
+#include <iostream>
+class A { 
+private: 
+    int a; 
+  
+public: 
+    A() { a = 0; } 
+    friend class B; // Friend Class 
+}; 
+  
+class B { 
+private: 
+    int b; 
+  
+public: 
+    void showA(A& x) 
+    { 
+         
+        std::cout << "A::a=" << x.a; 
+    } 
+}; 
+  
+int main() 
+{ 
+    A a; 
+    B b; 
+    b.showA(a); 
+    return 0;
+ }
+
+A. A::a=0
+B. A
+C. a=0
+D. A::0
+
+Answer: A
+
+19. What is the output of the following program?
+
+#include <iostream>
+    using namespace std;
+    class Box
+    {
+        double width;
+        public:
+        friend void printWidth( Box box );
+        void setWidth( double wid );
+    };
+    void Box::setWidth( double wid )
+    {
+        width = wid;
+    }
+    void printWidth( Box box )
+    {
+        box.width = box.width * 2;
+        cout << "Width of box : " << box.width << endl;
+    }
+    int main( )
+    {
+        Box box;
+        box.setWidth(10.0);
+        printWidth( box );
+         return 0;
+   }
+
+Width of the box : __
+A) 40
+B) 5
+C) 10
+D) 20
+
+Answer: 20
+
+20. What is the output of the following program?
+
+#include <iostream>
+    using namespace std;
+    class sample 
+    {
+        int width, height;
+        public:
+        void set_values (int, int);
+        int area () {return (width * height);}
+        friend sample duplicate (sample);
+    };
+    void sample::set_values (int a, int b) 
+    {
+        width = a;
+        height = b;
+    }
+    sample duplicate (sample rectparam)
+    {
+        sample rectres;
+        rectres.width = rectparam.width * 2;
+        rectres.height = rectparam.height * 2;
+        return (rectres);
+    }  
+    int main ()  
+    {
+        sample rect, rectb;
+        rect.set_values (2, 3);
+        rectb = duplicate (rect);
+        cout << rectb.area();
+        return 0;
+    }
+
+A) 20
+B) 16
+C) 24
+D) 18
+
+Answer: C 
+
+
+21. What will be the output of the following C++ code?
+
+#include <iostream>
+using namespace std;
+class Test
+{
+    static int x;
+  public:
+    Test() { x++; }
+    static int getX() {return x;}
+};
+int Test::x = 0;
+int main()
+{
+    cout << Test::getX() << " ";
+    Test t[5];
+    cout << Test::getX();
+    return 0;
+}
+
+A) 0 0
+B) 5 0
+C) 0 5
+D) 5 5
+
+Answer: C
+
+22. What is the output of the following program?
+#include <iostream>
+using namespace std;
+class A
+{
+   private:
+     int x;
+   public:
+     A(int _x)  {  x = _x; }
+     int get()  { return x; }
+};
+class B
+{
+    static A a;
+  public:
+   static int get()
+   {  return a.get(); }
+}; 
+int main(void)
+{
+    B b;
+    cout << b.get();
+    return 0;
+}
+
+A) Garbage value
+B) Compile-time Error
+C) Run-time Error
+D) Nothing is printed
+
+
+Answer: B
+
+23. The static member functions __________________
+A) Have access to all the members of a class
+B) Have access to only constant members of a class
+C) Have access to only the static members of a class
+D) Have direct access to all other class members also
+
+Answer: C
+
+24. If static data members are made inline, ______________
+A) Those should be initialized outside the class
+B) Those can’t be initialized with the class
+C) Those can be initialized within the class
+D) Those can’t be used by class members
+
+Answer: C
+
+25. A friend function can be invoked using an object of the class
+in which it is defined. State whether this is true or false
+
+A. TRUE
+B. FALSE
+
+Answer: B
+
+26. Operator functions can be wither _______ functions or ______
+    functions.
+
+    Answer: member (non-static) or friend
+
+

@@ -27,4 +27,22 @@ Virtual Function -  are functions that are expected to be overridden
 Abstract Class 
     are functions meant to be overridden 
     they have atleast one pure virtual function 
+
+Multiple Inheritance 
+    a feature in cpp where a class can inherit features or functions from more than one parent classes.
+    for example in problem MI3.cpp -> forms a diamond problem where the class d derives functions from class a , from both class b and c , causing multiple copies of a . 
+
+    in order to solve that problem we use virtual function -> i.e a's function is made virtual -> therefore d get's a single copy of a 
+
+Exception Handling : 
+    smart pointer 
+    it consists of a constructor , destructor and a overloaded operators such that when the pointers go out of scope the memory is deallocated . 
     
+copyassignment.cpp
+    -> declare first and then copy - shallow copy 
+    -> constructor is called - deep copy
+
+Types of Constructor 
+    -copy 
+    -dynamic 
+    -move constructor
