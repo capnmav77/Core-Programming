@@ -67,38 +67,45 @@ using namespace std;
 //     }
 // };
 
-//tabulation
+//normal dp with tabulation
 // class Solution {
 // public:
 //     int climbStairs(int n) {
-//         if (n == 0 || n == 1) {
+//         if(n==0){
+//             return 0;
+//         }
+//         if(n==1){
 //             return 1;
 //         }
-
-//         vector<int> dp(n+1);
-//         dp[0] = dp[1] = 1;
-        
-//         for (int i = 2; i <= n; i++) {
-//             dp[i] = dp[i-1] + dp[i-2];
+//         vector<int> dp(n);
+//         dp[0] = 1;
+//         dp[1] = 2;
+//         for(int i= 2 ; i<n ; i++){
+//             dp[i] = dp[i-1]+dp[i-2];
 //         }
-//         return dp[n];
+//         return dp[n-1];
 //     }
 // };
 
-//space optimization
+// dp with space optimization
+
 class Solution {
 public:
     int climbStairs(int n) {
-        if (n == 0 || n == 1) {
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
             return 1;
         }
-        int prev = 1, curr = 1;
-        for (int i = 2; i <= n; i++) {
-            int temp = curr;
-            curr = prev + curr;
-            prev = temp;
+        int i = 1;
+        int j = 2;
+        for(int k= 2 ; k<n ; k++){
+            int temp = i+j;
+            i=j; 
+            j=temp;
         }
-        return curr;
+        return j;
     }
 };
 
