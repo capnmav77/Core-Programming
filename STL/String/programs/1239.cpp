@@ -140,5 +140,8 @@ public:
 
 int main()
 {
+    vector<string>arr = {"cha","r","act","ers"};
+    Solution s;
+    cout<<s.maxLength(arr);
     return 0;
 }
