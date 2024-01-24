@@ -46,3 +46,49 @@ Types of Constructor
     -copy 
     -dynamic 
     -move constructor
+
+## Templates: 
+    need for templates:
+        the need for using the same source code while using different byte sized inputs : english vs other languages
+        therefore characters of different widths can be accomodated in one templatized variable .
+
+## partial Specialization . 
+    we can overload the templates , for every variable types of template call , we can call different functions
+
+## Template Instantiation?
+    template -- blueprint 
+    only when instantiated -- code is generated and put into the program code .
+    ### implicit Instantiation :  
+        - done by the compiler to call the template 
+    ### explicit instantiation: 
+        - it's a way to explicitly tell the compiler what instantiations of template to create even if they are not explicitly used in code .
+
+## Formal defn of Generic programming:
+    we take out the abstraction , concrete , efficient algo , to obtain generic algorithims that can be combined with different data rep. to produce wide variety of software.
+    C++ 98 was when the first concept of templates are used.
+
+    - Advantages 
+        - avoid repetation 
+        - compact code 
+        - more compatable
+    - disadvantages
+        - cumbersome and hard to write 
+        - cryptic error messages
+        increase the compilation time . as they are in header files , and whenever the body of the template changes the all translation units in that header files are recompiled.
+
+## Class templates 
+    can be declared without being defined and used in contexts where incomplete types are allowed , such as the declaration of a function , as shown : 
+
+    template<typename T>
+    class wrapper;
+    void use foo()
+
+    template<typename T>
+    class wrapper
+    {
+        //template defn 
+    };
+    void use_wrapper(wrapper<int> *ptr)
+    {
+        std::cout<<ptr->get <<'\n';
+    }
