@@ -4,6 +4,7 @@ using namespace std;
 template <typename T>
 void swap(T* a, T* b)
 {
+	cout<<"Swap between "<<*a<<" "<<*b<<endl;
 	T t = *a;
 	*a = *b;
 	*b = t;
@@ -13,12 +14,14 @@ template <typename T>
 int partition(T arr[], int const low, int const high)
 {
 	T pivot = arr[high];
+	cout<<"Pivot = "<<pivot<<endl;
 	int i = (low - 1);
 	for (int j = low; j <= high - 1; j++)
 	{
-		if (arr[j] < pivot)
+		if (*arr[j] < *pivot)
 		{
 			i++;
+			cout<<"Here swap is called "<<arr[j]<<" "<<pivot<<endl;
 			swap(&arr[i], &arr[j]);
 		}
 	}
@@ -39,30 +42,20 @@ void quicksort(T arr[], int const low, int const high)
 
 int main()
 {
-	int arr[] = { 13, 1, 8, 3, 5, 2, 1 };
-	int n = sizeof(arr) / sizeof(arr[0]);
 
-	char arr_char[] = {'a','g','q','a','r','p'};
-	double arr_double[] = {2.99,19,98,7.43,34.45,100.99};
+	char *s1 = "abc\0";
+	char *s2 = "bbc\0";
+	char *s3 = "bac\0";
+	char *s4 = "acc\0";
+
+	char* sr[]={s1,s3,s4,s2};
 
 
-	
-	quicksort(arr, 0, n - 1);
-	cout << "After sorting\n";
-	for (int k = 0; k < n; k ++)
-		cout << arr[k] << " ";
-
-	quicksort(arr_char,0,5);
-	quicksort(arr_double,0,5);
+	quicksort(sr,0,3);
 	cout<<endl;
+	for(int i=0;i<4;++i)
+	printf("%s ",sr[i]);
 
-
-	for(auto x:arr_char)
-	cout << x << " ";
-
-	cout<<endl;
-	for(auto x:arr_double)
-	cout << x << " ";
 	return 0;
 
 }
