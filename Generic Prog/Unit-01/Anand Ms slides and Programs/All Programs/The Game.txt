@@ -1,0 +1,17 @@
+Develop a guessing game.
+
+Your program generates a random number between two limits specified by the user (to be keyed in). The user has to keep on guessing. If the guessed number is less than the generated number you have to give a message "The guess is x% lower than the generated number". If it is higher, the message should be "The guess is y% higher than the generated number". Once the user input matches the number, the game is over. You have to keep track of all the user input numbers and finally print out all those and the number of attempts the user took to come up with the actual number.
+
+Additional requirements
+=======================
+If the user keys in the same guess more than once, print out a warning message "You have already keyed in that guess" and don't consider it as an attempt.
+
+
+You need to use the following features of C++
+Class with private members and member function to generate the random number
+Namespace (s) to include the functions you might want to write
+Constructors as part of the class you write.
+Use vector to keep track of the user inputs.
+Include cstdlib and use the rand() function to generate the random number.
+
+
