@@ -92,3 +92,79 @@ Types of Constructor
     {
         std::cout<<ptr->get <<'\n';
     }
+
+
+## Member Function Templates:
+    it is possible to define member function templates , both in templates classes and class templates .
+    eg: 
+        template<typename T>
+        class wrapper // a class template
+        {
+            public:
+                
+                T foo(U u); // not a template function.
+        };
+        throws error when we call : 
+        wrapper<int> w;
+        w.foo<int>(10); // error - because it's not a template function.
+
+    eg: 
+        template<typename T>
+        class wrapper // a class template
+        {
+            public:
+                template<typename U>
+                T foo(U u); // a template function.
+        };
+        does not throw error when we call :
+        wrapper<int> w;
+        w.foo<int>(10); // no error -  because it is a template function 
+
+# Note: the function template parameter should be different from the class template parameter.
+
+## we can templatize the class or the function or both . 
+
+
+## declare a member function within a templatized class and declaration outside the class . 
+    template<typename T>
+    class wrapper
+    {
+        public:
+            T foo(T t);
+    };
+    template<typename T>
+    T wrapper<T>::foo(T t)
+    {
+        return t;
+    }
+
+
+## Non Tpye template Parameters
+    we pass a non type parameter to a template , it can be a value or a pointer or a reference , but not a type .
+    eg: template<typename T , int size > // here we need to declare the size of the array at compile time . 
+
+    the possible forms are : 
+        template <int V>
+
+        template <int *V>
+
+        template <int &V>
+
+        template <int V[10]>
+
+## CLass templates with multiple parameters 
+
+## Template Template Parameters
+    each parameter of a template template parameter must itself be a template parameter .
+    i.e when we instantiante a class template , we can pass a class template as a parameter to the class template .
+    eg: template_template.cpp
+
+## Default Template Arguments
+    we can provide default arguments to the template parameters , so that we can instantiate the template without providing the template arguments .
+    eg: 
+        template<typename T = int>
+        class wrapper
+        {
+            //class defn
+        };
+        wrapper<> w; // here we are not providing the template argument , but the compiler will take the default argument as int .
