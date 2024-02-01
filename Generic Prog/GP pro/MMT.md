@@ -72,7 +72,18 @@
     - Departure 
     - Pickup Time 
     - Return Time 
-    
+
+(base class)
+- roomsAndGuests 
+    - rooms 
+    - adults 
+    - children
+
+(base class)
+-dataAndTime 
+    - date 
+    - time
+
 - Forex Card and currency 
     NA
 
