@@ -84,6 +84,30 @@
     - date 
     - time
 
+(base class)
+- location 
+    - city 
+    - state 
+    - country 
+    - pincode
+
+(base class)
+- fareType 
+    - economy 
+    - premium economy 
+    - business 
+    - first class
+
+<template function>
+- filter(object,filters)
+
+<template function>
+- sort(object,sortType)
+
+template
+
+
+
 - Forex Card and currency 
     NA
 
