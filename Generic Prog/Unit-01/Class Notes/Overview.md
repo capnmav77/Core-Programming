@@ -168,3 +168,45 @@ Types of Constructor
             //class defn
         };
         wrapper<> w; // here we are not providing the template argument , but the compiler will take the default argument as int .
+
+## Template Parameters:
+    when a default template argument is specified , it is not possible to specify a template argument for a subsequent template parameter .
+    eg: 
+        template<typename T = int , typename U> // error 
+        class wrapper
+        {
+            //class defn
+        };
+        wrapper<> w; // here we are not providing the template argument , but the compiler will take the default argument as int .
+    when default template arg uses names from a class , the member access restrictions are checked at the declaration and not at the instantiation of the template .
+        template<Typename T>
+        struct foo{
+            protected: 
+                using value_type T;
+        };
+        template <typename T , typename U = typename T::value_type> // error - because the value_type is protected , and it is checked at the declaration of the template . not here .
+        struct bar
+        {
+            using value_type = U;
+        };
+        bar<foo<int>> b; // error - because the value_type is protected , and it is checked at the declaration of the template .
+
+## Implicit Instantiation :
+    implicit instantiation occurs when a compiler generates instantiation when there is no explicit instantiation or explicit specialization for that template .
+    eg: 
+        template<typename T>
+        class wrapper
+        {
+            public:
+                T foo(T t);
+        };
+        int main()
+        {
+            wrapper<int> w; // implicit instantiation of the template .
+        }
+
+## in regular class , the static member is attached to a type of the template , i.e a single copy is shared among all the similar templated type
+
+## Template instantiation : 
+    if the explicit instanatation definition is not in the same namespace as the template , then the explicit instantiation definition must be preceded by a template declaration .
+    
