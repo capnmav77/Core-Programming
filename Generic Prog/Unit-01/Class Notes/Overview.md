@@ -210,3 +210,35 @@ Types of Constructor
 ## Template instantiation : 
     if the explicit instanatation definition is not in the same namespace as the template , then the explicit instantiation definition must be preceded by a template declaration .
     
+
+## Template Specialization:
+    the general rule of thumb is that the compiler chooses the template specialization that is the most specialized for the given set of template arguments .
+
+## Variable Specialization :
+    allow us to define variables that are templates either at namespace scope or at class scope .d
+    eg: 
+        template<typename T>
+        T pi = T(3.1415926535897932385L);
+        template<>
+        const char * pi<const char *> = "pi";
+        template<>
+        const wchar_t * pi<const wchar_t *> = L"pi";
+
+    therefore we need to specialize the variable template , in order to use it in the main function .
+    - we can also initialzie the constexpr later on because it is a template and only the blurprint get's created first. 
+
+
+## Generic Lambda and Lambda templating : 
+    we can templatize the lambda function , so that we can use it for different types of inputs .
+    eg: 
+        auto lambda = [](auto a , auto b)
+        {
+            return a+b;
+        };
+        std::cout<<lambda(1,2)<<'\n';
+        std::cout<<lambda(1.1,2.2)<<'\n';
+        std::cout<<lambda(std::string("hello"),std::string("world"))<<'\n';
+    there are 3 types of lambda : 
+        - regular lambda
+        - generic lambda 
+        - lambda templating 
