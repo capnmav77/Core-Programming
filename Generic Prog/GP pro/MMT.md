@@ -74,8 +74,8 @@
     - Return Time 
     
 - Forex Card and currency 
+    NA
+
 
 - Foreign Insurance 
-
-
-
+    NA
