@@ -168,3 +168,77 @@ Types of Constructor
             //class defn
         };
         wrapper<> w; // here we are not providing the template argument , but the compiler will take the default argument as int .
+
+## Template Parameters:
+    when a default template argument is specified , it is not possible to specify a template argument for a subsequent template parameter .
+    eg: 
+        template<typename T = int , typename U> // error 
+        class wrapper
+        {
+            //class defn
+        };
+        wrapper<> w; // here we are not providing the template argument , but the compiler will take the default argument as int .
+    when default template arg uses names from a class , the member access restrictions are checked at the declaration and not at the instantiation of the template .
+        template<Typename T>
+        struct foo{
+            protected: 
+                using value_type T;
+        };
+        template <typename T , typename U = typename T::value_type> // error - because the value_type is protected , and it is checked at the declaration of the template . not here .
+        struct bar
+        {
+            using value_type = U;
+        };
+        bar<foo<int>> b; // error - because the value_type is protected , and it is checked at the declaration of the template .
+
+## Implicit Instantiation :
+    implicit instantiation occurs when a compiler generates instantiation when there is no explicit instantiation or explicit specialization for that template .
+    eg: 
+        template<typename T>
+        class wrapper
+        {
+            public:
+                T foo(T t);
+        };
+        int main()
+        {
+            wrapper<int> w; // implicit instantiation of the template .
+        }
+
+## in regular class , the static member is attached to a type of the template , i.e a single copy is shared among all the similar templated type
+
+## Template instantiation : 
+    if the explicit instanatation definition is not in the same namespace as the template , then the explicit instantiation definition must be preceded by a template declaration .
+    
+
+## Template Specialization:
+    the general rule of thumb is that the compiler chooses the template specialization that is the most specialized for the given set of template arguments .
+
+## Variable Specialization :
+    allow us to define variables that are templates either at namespace scope or at class scope .d
+    eg: 
+        template<typename T>
+        T pi = T(3.1415926535897932385L);
+        template<>
+        const char * pi<const char *> = "pi";
+        template<>
+        const wchar_t * pi<const wchar_t *> = L"pi";
+
+    therefore we need to specialize the variable template , in order to use it in the main function .
+    - we can also initialzie the constexpr later on because it is a template and only the blurprint get's created first. 
+
+
+## Generic Lambda and Lambda templating : 
+    we can templatize the lambda function , so that we can use it for different types of inputs .
+    eg: 
+        auto lambda = [](auto a , auto b)
+        {
+            return a+b;
+        };
+        std::cout<<lambda(1,2)<<'\n';
+        std::cout<<lambda(1.1,2.2)<<'\n';
+        std::cout<<lambda(std::string("hello"),std::string("world"))<<'\n';
+    there are 3 types of lambda : 
+        - regular lambda
+        - generic lambda 
+        - lambda templating 
