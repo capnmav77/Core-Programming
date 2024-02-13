@@ -258,4 +258,8 @@ Types of Constructor
 	template<class...A> void func(A...args)
 ```
 
+- ### Parameter Pack expansion
+	- if more than one parameter pack is referenced in a pack expansion , each expansion must have the same number of arguments expanded from these parameter packs.
+	- example : 
+
 
