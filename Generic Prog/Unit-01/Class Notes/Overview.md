@@ -242,3 +242,20 @@ Types of Constructor
         - regular lambda
         - generic lambda 
         - lambda templating 
+
+# Parameter Pack 
+- Template Parameter pack 
+	- represents any number of template parameters . 
+- Type parameter pack represents zero or more type template parameters
+	- eg: 
+```
+	  template<bool...b>
+```
+- Default parameter assignment is not allowed . 
+- ### Function parameter pack 
+	- is a function parameter that represents 0 or more functions 
+```
+	template<class...A> void func(A...args)
+```
+
+
