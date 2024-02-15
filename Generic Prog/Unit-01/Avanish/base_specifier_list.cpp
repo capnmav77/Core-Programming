@@ -5,6 +5,7 @@ struct a1{};
 struct a2{};
 struct a3{};
 struct a4{};
+struct a5{};
 
 template<class X> struct baseC{
     baseC() {printf("baseC primary ctor\n");}
@@ -18,9 +19,7 @@ template<> struct baseC<a2>{
 template<> struct baseC<a3>{
     baseC() {printf("baseC a3 ctor\n");}
 };
-template<> struct baseC<a4>{
-    baseC() {printf("baseC a4 ctor\n");}
-};
+
 
 template<class...A> struct container : public baseC<A>...{
     container(){
@@ -29,6 +28,8 @@ template<class...A> struct container : public baseC<A>...{
 };
 
 int main(void){
-    container<a1,a2,a3,a4> test;
+    container<a1,a2,a3,a5> test;
+
+    // struct<a1> baseC a;  
     return 0;
 }

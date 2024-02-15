@@ -33,5 +33,6 @@ int main(void){
     value<5> v5;
     value<6> v6;
     func(v99,v98,v3,v4,v5,v6);
+
     return 0;
 }   
