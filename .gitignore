@@ -1,4 +1,5 @@
 *.exe
-.vscode 
+.vscode/
 *.out
-.obsidian
+.obsidian/
+*.json
