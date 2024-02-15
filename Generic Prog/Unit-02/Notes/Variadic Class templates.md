@@ -9,9 +9,15 @@
 	- 1.we need to fetch the type and value of that index .
 		- type :
 			- implement a recursive call -> template <size_t N, typename T, typename... Ts> 
-			- therefore when N == 0 , return the type at that index . 
+			- therefore when N /== 0 , return the type at that index . 
 		- value : 
 			- return type is the value at that node 
 			- we recurse till N becomes 0 , then we have reached the node N 
 			- we then return the value at the that node. 
-- 
+## Fold expressions 
+- from earlier implementation we needed a pack expression function as well as a overloaded base case in order to take care of the base case . 
+- therefore in order to get over this huge implementation we use fold expression . 
+
+### Variadic alias templates 
+- wherever there is a template , it can be aliased using 'using'
+- check out the slides 

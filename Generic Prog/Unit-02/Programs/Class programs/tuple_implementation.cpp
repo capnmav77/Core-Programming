@@ -3,7 +3,7 @@
 // using namespace std;
 
 
-template< typename T, typename... s>
+template< typename T, typename... Ts>
 struct tuple{
     tuple(T const &t , Ts const &... ts):value(t),rest(ts...) //pack expansion
     {}
@@ -22,8 +22,8 @@ struct tuple<T>{
 };
 
 // for the nth_type -> we find the type of the nth element in the tuple
-template <size_t N, typename... Ts , typename T> //pack expansion
-struct nth_type : nth_type<N-1,Ts> //recursive class template where the first parameter is decremented by 1
+template <size_t N, typename T , typename... Ts> //pack expansion
+struct nth_type : nth_type<N-1,Ts...> //recursive class template where the first parameter is decremented by 1
 {
     static_assert(N < sizeof...(Ts)+1, "index out of range");
 };
@@ -60,7 +60,7 @@ struct getter<0>
 int main()
 {
     tuple<int ,double , char> t(1,2.3,'a');
-    std::cout<<getter<0>::get(t)<<std::endl;
+    std::cout<<getter<2>::get(t)<<std::endl;
 
     return 0;
 }
