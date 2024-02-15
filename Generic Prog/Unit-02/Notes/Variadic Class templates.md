@@ -1,0 +1,5 @@
+- Class templates may have variable number of template arguments. this is key to building some categories of types , such as tuple and variant , that are avail in stl . 
+- Tuple - fixed size collection of heterogenous values.
+- when implementing it : 
+	- use a recursive pattern with 2 overloads, one for general case and one for ending recursion . 
+- 
