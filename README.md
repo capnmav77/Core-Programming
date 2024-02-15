@@ -1,14 +1,13 @@
 # Core Programming 
-
 This repository contains all the programs and Topics discussed in Generic programming , as well as an base for compeitive programming in CPP . 
 
 ## Repo Structure
 
 ### Archives 
-this subsection covers topics that we're taught during DAA course and CPP course .
+This section covers topics that we're taught during DAA course and CPP course .
 
 ### Books 
-this section contains important books that help in Generic Programming as well as competitive programming 
+This section contains important books that help in Generic Programming as well as competitive programming 
 
 ### Competitive Programming 
 This section deals with competitive programming , including the STL part divided into subsections containing implementation of them in cpp 
