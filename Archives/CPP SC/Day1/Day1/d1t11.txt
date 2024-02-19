@@ -1,0 +1,31 @@
+Row major and column major are two ways of storing a two-dimensional array in memory. They differ in how the elements are arranged linearly.
+
+In row major order, the elements of each row are stored contiguously, and the rows are stored one after another. For example, if we have a 3x3 array like this:
+
+|1, 2, 3|
+|4, 5, 6|
+|7, 8, 9|
+
+The row major order of storing it in memory is:
+
+|1|2|3|4|5|6|7|8|9|
+
+In column major order, the elements of each column are stored contiguously, and the columns are stored one after another. For example, the same array as above would be stored in column major order as:
+
+|1|4|7|2|5|8|3|6|9|
+
+The choice of row major or column major order affects how we access the elements of the array using indices. In C, arrays are stored in row major order by default, and the indices are written as [row][column]. For example, to access the element 5 in the above array, we would write a[1][1], where a is the name of the array.
+
+To calculate the address of an element a[i][j] in row major order, we can use this formula:
+
+address = base + (i * n + j) * s
+
+where base is the starting address of the array, n is the number of columns, and s is the size of each element.
+
+In column major order, the indices are written as [column][row], and the formula for calculating the address is:
+
+address = base + (j * m + i) * s
+
+where m is the number of rows.
+
+The choice of row major or column major order may affect the performance of some operations on arrays, such as matrix multiplication or traversal. Depending on how the arrays are accessed, one order may be more cache-friendly than the other. Generally, it is better to access the elements in the same order as they are stored in memory.

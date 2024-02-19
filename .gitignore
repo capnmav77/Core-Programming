@@ -1,2 +1,5 @@
 *.exe
-.vscode 
+.vscode/
+*.out
+.obsidian/
+*.json
