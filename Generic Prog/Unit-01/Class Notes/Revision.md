@@ -148,6 +148,8 @@ public:
 			4. The prototype of virtual functions should be the same in the base as well as the derived class. 
 			5. They are always defined in the base class and overridden in a derived class. It is not mandatory for the derived class to override (or re-define the virtual function), in that case, the base class version of the function is used. 
 			6. A class may have a virtual destructor but it cannot have a virtual constructor.
+
+
 	- #### move oper and Copy oper
 		- deep copies -> costly 
 		- move semantics -> take resources from one and pass it onto the object being moved .
@@ -161,4 +163,237 @@ public:
 			- The traditional reference variables of C++ e.g., std::string& ref; are now called lvalue references
 
 ## Need for templates : 
-- 
+- Try generalizing quicksort ?
+	- man it's flipping hard 
+	- the most we could come up with was void pointers 
+	- check quicksort with void pointers 
+	- the main problem faced was using swap operation and comparision operation
+	- we use void( * )(void * *, int const i , int const j); -> for swap 
+	- we use bool(* )(void*,int const i , int const j  ) -> for compare func 
+	- check quicksort prog for depth . 
+- #### Advantages 
+	- Templates help us avoid writing repetitive code. 
+	- Templates foster the creation of generic libraries providing algorithms and types, such as the standard C++ library (sometimes incorrectly referred to as the STL), which can be used in many applications, regardless of their type. 
+	- The use of templates can result in less and better code. For instance, using algorithms from the standard library can help write less code that is likely easier to understand and maintain and also probably more robust because of the effort put into the development and testing of these algorithms.
+
+### Template Specialization
+- it's a method to override a template defn in order to handle multiple input params
+- The idea of template specialization is to override the default template implementation to handle a particular type in a different way.
+- #### TYPES: 
+	- Explicit specialization - when the template arguments are all manually provided by the user
+	- Implicit specialization- when the template arguments are instantiated by the compiler 
+	- Partial Specialization - only some template parameters are implemented.
+- Template Instantion -> this happens by sub-ing the template arguments for template parameters 
+	- Types : 
+	  - implicit instantiation - compiler generates defn based on the use of templates and when no explicit instantiation is present 
+	  - example :
+``` cpp
+		template<typename T> 
+		struct foo
+		{
+			void f() {};
+		};
+		int main(){
+			foo<int> x;
+		}
+		// here since the compiler encounters foo<int> x but do not use any of it's functions the compiler implicitly defines a specialization of foo for the int type 
+		// therefore the above code is converted to : 
+		template<> 
+		struct foo<int>
+		{
+			Inline void f();
+		};
+```
+
+#### NOTE: 
+However, if we add one more function, g, with the following implementation that contains an error, we will get different behaviors with different compilers: 
+```
+template <typename T> 
+struct foo { 
+	void f() {} 
+	void g() {int a = "42";}  // hehh string ? 
+}; 
+int main() { 
+	foo<int> x; 
+	x.f(); 
+}
+```
+this body of g contains an error . this code compiles because some compilers ignore the part of the template that are not used , provided the code is syntactically correct but semantically wrong . 
+
+#### Explicit instantiation - compiler generates defn based on the use of manual help provided 
+![[Pasted image 20240220173335.png]]
+![[Pasted image 20240220173629.png]]
+
+##### One more example : 
+![[Pasted image 20240220173718.png]]
+
+
+
+
+- #### Static cast: 
+	- is a compile time cast . implicit conversions between types (int - float , pointer - void* etc.)
+	- can also call explicit conversion function.
+
+- #### Types of templates:
+	- **Type template parameters**, such as in template```<typename T>```where the parameter represents a type specified when the template is used. 
+	- **Non-type template parameters**, such as in template```<size_t N>```or template```<auto n>```, where each parameter must have a structural type, which includes integral types, floating-point types (as for C++20), pointer types, enumeration types, lvalue reference types, and others (i.e., basic or derived data types) .
+	- **Template template parameters**, such as in template
+		- ```<typename K, typename V, template<typename> typename C >``` where the type of a parameter is another template. 
+
+example :
+``` cpp
+#include <iostream>
+using namespace std;
+// Class template
+template <typename T>
+
+class Number {
+   private:
+    // Variable of type T
+    T num;
+   public:
+    Number(T n) : num(n) {}   // constructor
+    //why dont' we manually define the constructor?
+    //because we are using a template class, so we don't know the type of the variable
+    //so we can't define the constructor manually
+    // what about num = n;?
+    // num(n) is the same as num = n;
+    T getNum() {
+        return num;
+    }
+};
+int main() {
+    // create object with int type
+    Number<int> numberInt(7);
+    // create object with double type
+    Number<double> numberDouble(7.7);
+    cout << "int Number = " << numberInt.getNum() << endl;
+    cout << "double Number = " << numberDouble.getNum() << endl;
+    return 0;
+}
+```
+
+- Basic Instinct: 
+	- T-> class identifier that is used to define the type of value passed into the function . 
+#### Function templates
+	- 1. Generic Function:
+```cpp
+template<typename T>
+T max(T a, T b) {
+    return a > b ? a : b;
+}
+
+int main() {
+    int x = 5, y = 10;
+    double a = 3.14, b = 2.71;
+    std::cout << max(x, y) << std::endl; // Output: 10
+    std::cout << max(a, b) << std::endl; // Output: 3.14
+    return 0;
+}
+```
+- the above template is used to generically make the comparasions based on different types of data provided to it. 
+
+#### Class Templates
+- 2. Generic Classes : 
+```cpp
+template<typename T>
+class Stack {
+private:
+    T* data;
+    int size;
+public:
+    Stack(int size) {
+        this->size = size;
+        data = new T[size];
+    }
+    ~Stack() {
+        delete[] data;
+    }
+    void push(T value) {
+        data[size++] = value;
+    }
+    T pop() {
+        return data[--size];
+    }
+};
+
+int main() {
+    Stack<int> intStack(10);
+    intStack.push(5);
+    intStack.push(10);
+    std::cout << intStack.pop() << std::endl; // Output: 10
+
+    Stack<double> doubleStack(10);
+    doubleStack.push(3.14);
+    doubleStack.push(2.71);
+    std::cout << doubleStack.pop() << std::endl; // Output: 2.71
+    return 0;
+}
+
+```
+- In this example, the `Stack` class is a generic class that can work with different types of data. The `typename` keyword is used to specify that `T` is a type parameter. When the class is instantiated, the type of `T` is specified in angle brackets (`<>`).
+#### Template specialization
+- 3.Template Specialization: 
+```cpp
+template<typename T>
+void print(T value) {
+    std::cout << value << std::endl;
+}
+
+template<>
+void print<std::string>(std::string value) {
+    std::cout << "String: " << value << std::endl;
+}
+
+int main() {
+    print(5); // Output: 5
+    print("Hello"); // Output: String: Hello
+    return 0;
+}
+
+```
+- In this example, the `print` function is a generic function that can work with different types of data. However, the function is specialized for `std::string`, which means that a different implementation is used for `std::string` than for other types.
+
+- 4. Template Metaprogramming 
+``` cpp
+template<int N>
+struct Factorial {
+    static const int value = N * Factorial<N - 1>::value;
+};
+
+template<>
+struct Factorial<0> {
+    static const int value = 1;
+};
+
+int main() {
+    std::cout << Factorial<5>::value << std::endl; // Output: 120
+    return 0;
+}
+```
+- In this example, the `Factorial` struct is a template struct that calculates the factorial of a number at compile time. The `value` member is a static constant that is calculated recursively using template specialization.
+
+
+
+### Function Templates 
+```cpp
+template <typename Input, typename Predicate> 
+int count_if(Input start, Input end, Predicate p) { 
+	int total = 0; 
+	for (Input i = start; i != end; i++) {
+		if (p(*i)) total++;
+	} 
+	return total; 
+}
+```
+- Classes - default access specifier is private 
+- Structure - default access specifier is public 
+
+- #### Template class, Template functions 
+	- eg : check slides 109 
+	- when class is templatized : ```c.add<int>(41,42);```gives an error
+	- when function is templatized but not the class  : ```c.add<int>(41,42);``` does not give an error
+
+#### Template Parameter pack -> variadic template 
+- discussed in unit - 2
+

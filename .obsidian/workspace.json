@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6b70d62a30440eca",
+        "id": "118a86565bf300d6",
         "type": "tabs",
         "children": [
           {
-            "id": "d1b1c426550762a5",
+            "id": "c462909ba49cc63a",
             "type": "leaf",
             "state": {
               "type": "pdf",
@@ -16,27 +16,15 @@
                 "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf"
               }
             }
-          },
-          {
-            "id": "aadd0975b030e39e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ]
       },
       {
-        "id": "118a86565bf300d6",
+        "id": "416491f19df89ffd",
         "type": "tabs",
         "children": [
           {
-            "id": "a6a8d992becd54d1",
+            "id": "8bfa1b00b1fec8d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -114,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
+                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
+                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Revision.md"
+                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf"
               }
             }
           }
@@ -175,25 +163,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a6a8d992becd54d1",
+  "active": "c462909ba49cc63a",
   "lastOpenFiles": [
-    "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
     "Generic Prog/Unit-01/Class Notes/Revision.md",
+    "Pasted image 20240220173718.png",
+    "Pasted image 20240220173629.png",
+    "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
+    "Pasted image 20240220173335.png",
+    "Generic Prog/Unit-02/Notes/Name binding and Dependent names.md",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/a.exe",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/factorialVarTEmp.cpp",
+    "Generic Prog/Unit-02/Programs/a.exe",
+    "Generic Prog/Unit-02/Programs/Factorial.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase3.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase2.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/template_deduce.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/temp_recurse2.cpp",
     "Untitled.md",
-    "Images",
-    "Archives/PPT/check_NumberPlate.cpp",
-    "Archives/PPT",
     "Images/Pasted image 20240220055111.png",
-    "Generic Prog/Unit-01/Anand Ms slides and Programs/All Programs/a.exe",
-    "Generic Prog/Unit-01/PROGRAMS/a.exe",
     "Generic Prog/Unit-01/Class Notes/Overview.md",
     "().md",
     "Images/Pasted image 20240220035642.png",
-    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.exe",
-    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.c",
-    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.cpp",
     "Images/Pasted image 20240220031021.png",
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameterpack2.cpp",
     "Generic Prog/GP pro/MMT.md"
   ]
 }

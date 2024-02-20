@@ -11,7 +11,12 @@ class Number {
     T num;
 
    public:
-    Number(T n) : num(n) {}   // constructor
+    Number(T n) : num(n) {}   // constructor 
+    //why dont' we manually define the constructor?
+    //because we are using a template class, so we don't know the type of the variable
+    //so we can't define the constructor manually
+    // what about num = n;?
+    // num(n) is the same as num = n;
 
     T getNum() {
         return num;
