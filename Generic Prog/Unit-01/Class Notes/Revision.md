@@ -148,6 +148,17 @@ public:
 			4. The prototype of virtual functions should be the same in the base as well as the derived class. 
 			5. They are always defined in the base class and overridden in a derived class. It is not mandatory for the derived class to override (or re-define the virtual function), in that case, the base class version of the function is used. 
 			6. A class may have a virtual destructor but it cannot have a virtual constructor.
+	- #### move oper and Copy oper
+		- deep copies -> costly 
+		- move semantics -> take resources from one and pass it onto the object being moved .
+		- Move semantics points the other object to the already existing object in the memory. It avoids the instantiation of unnecessary temporary copies of the objects by giving the resources of the already existing object to the new one and safely taking from the existing one. Taking resources from the old existing object is necessary to prevent more than one object from having the same resources.
+		- r-value references and l-value references 
+			- an l-value refers to a memory location that identifies an object, while an r-value refers to the data value that is stored at some address in memory. An l-value represents an object that occupies some identifiable location in memory, such as a variable. On the other hand, an r-value is a temporary or short-lived value that does not necessarily have a memory location.
+			- For example, in the expression `int x = 10;`, `x` is an l-value because it represents a memory location, while `10` is an r-value because it is a temporary value without a specific memory location.
+			- R-value references are denoted by `&&` and are used to extend the lifespan of temporary objects, allowing them to be bound to references and used beyond their initial scope. They are commonly used in move semantics and perfect forwarding.
+			- A declaration of an rvalue reference looks like this: 
+			- std::string&& rrstr; //C++11 rvalue reference variable 
+			- The traditional reference variables of C++ e.g., std::string& ref; are now called lvalue references
 
 ## Need for templates : 
 - 

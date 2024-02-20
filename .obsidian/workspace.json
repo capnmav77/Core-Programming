@@ -97,7 +97,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5
+    "width": 241.5,
+    "collapsed": true
   },
   "right": {
     "id": "bc668a07f3a07b0b",
@@ -113,6 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,6 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "Generic Prog/Unit-01/Class Notes/Revision.md"
               }
             }
           }
@@ -172,12 +175,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ed19153f690dc456",
+  "active": "a6a8d992becd54d1",
   "lastOpenFiles": [
-    "Images",
     "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
-    "Untitled.md",
     "Generic Prog/Unit-01/Class Notes/Revision.md",
+    "Untitled.md",
+    "Images",
     "Archives/PPT/check_NumberPlate.cpp",
     "Archives/PPT",
     "Images/Pasted image 20240220055111.png",
@@ -191,7 +194,6 @@
     "Generic Prog/Unit-01/PROGRAMS/littlebigendian.cpp",
     "Images/Pasted image 20240220031021.png",
     "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameterpack2.cpp",
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameter_exp_packs.exe",
     "Generic Prog/GP pro/MMT.md"
   ]
 }
