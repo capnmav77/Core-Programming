@@ -4,16 +4,44 @@
     "type": "split",
     "children": [
       {
-        "id": "4c761b8546811060",
+        "id": "6b70d62a30440eca",
         "type": "tabs",
         "children": [
           {
-            "id": "6c8f8f554fc713b9",
+            "id": "d1b1c426550762a5",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf"
+              }
+            }
+          },
+          {
+            "id": "aadd0975b030e39e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
+                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "118a86565bf300d6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6a8d992becd54d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.5,
-    "collapsed": true
+    "width": 241.5
   },
   "right": {
     "id": "bc668a07f3a07b0b",
@@ -86,7 +113,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +129,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md"
+                "file": "Untitled.md"
               }
             }
           }
@@ -147,19 +172,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c8f8f554fc713b9",
+  "active": "ed19153f690dc456",
   "lastOpenFiles": [
+    "Images",
+    "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
+    "Untitled.md",
+    "Generic Prog/Unit-01/Class Notes/Revision.md",
+    "Archives/PPT/check_NumberPlate.cpp",
+    "Archives/PPT",
+    "Images/Pasted image 20240220055111.png",
+    "Generic Prog/Unit-01/Anand Ms slides and Programs/All Programs/a.exe",
+    "Generic Prog/Unit-01/PROGRAMS/a.exe",
+    "Generic Prog/Unit-01/Class Notes/Overview.md",
+    "().md",
+    "Images/Pasted image 20240220035642.png",
+    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.exe",
+    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.c",
+    "Generic Prog/Unit-01/PROGRAMS/littlebigendian.cpp",
+    "Images/Pasted image 20240220031021.png",
     "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameterpack2.cpp",
     "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameter_exp_packs.exe",
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameter_exp_packs.cpp",
-    "Generic Prog/Unit-01/Avanish/template_arg_list.exe",
-    "Generic Prog/Unit-01/Avanish/member_initializer_list.exe",
-    "Generic Prog/Unit-01/Avanish/tempCodeRunnerFile.cpp",
-    "Generic Prog/Unit-01/Avanish/base_specifier_list.exe",
-    "Generic Prog/Unit-01/Avanish/initializer_list.exe",
-    "Generic Prog/Unit-01/Avanish/unary_lfold1.cpp",
-    "Generic Prog/Unit-01/Avanish/unary_lfold.cpp",
-    "Generic Prog/Unit-01/Avanish/template_arg_list.cpp",
     "Generic Prog/GP pro/MMT.md"
   ]
 }

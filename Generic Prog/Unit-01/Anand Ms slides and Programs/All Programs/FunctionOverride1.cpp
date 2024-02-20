@@ -22,6 +22,6 @@ public:
 int main()
 {
 	Child Child_Derived;
-	Child_Derived.My_Print();
+	Child_Derived.My_Print(); // prints "Derived Function" because it is overriding the base class function i.e My_Print in the parent class or base class
 	return 0;
 }

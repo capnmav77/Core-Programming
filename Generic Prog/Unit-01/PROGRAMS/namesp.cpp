@@ -27,6 +27,7 @@ namespace outer_ns
     }
 
     void print_ints(){
+        cout<<"inside the outer namespace";
         inner_ns::printer(arr,len);
     }
 
@@ -36,7 +37,7 @@ namespace outer_ns
 int main()
 {
     //define the functions here 
-    //outer_ns::inner_ns::printer(arr,len);
-    outer_ns::print_ints();
+    outer_ns::inner_ns::printer(outer_ns::arr,outer_ns::len); // the :: is the scope resolution operator which is used to access the members of a namespace
+    //outer_ns::print_ints();
     return 0;
 }
