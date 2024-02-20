@@ -1,6 +1,6 @@
 *.exe
 .vscode/
 *.out
-.obsidian/
 *.json
 Images/
+.obsidian/
