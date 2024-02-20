@@ -23,10 +23,10 @@ class Test
 int main()
 {
 	int i = 10;
-	int j = i;
-	Test t1, t2;
-	t2 = t1;
-	Test t3 = t1;
+	int j = i; // copy constructor is called which is a shallow copy
+	Test t1, t2; // default constructor is called
+	t2 = t1;	// assignment operator is called which is a shallow copy
+	Test t3 = t1; // copy constructor is called which is a deep copy? No, it is a shallow copy why?
 	cout << "value of j is: " << j << endl;
 	getchar();
 	return 0;
