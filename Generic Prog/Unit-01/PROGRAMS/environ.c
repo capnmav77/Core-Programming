@@ -24,7 +24,7 @@ void deff(){
 }
 
 int main (){
-    //printenv();
-    deff();
+    printenv();
+    //deff();
     return 0;
 }

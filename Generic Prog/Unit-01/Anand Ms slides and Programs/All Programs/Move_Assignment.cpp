@@ -7,6 +7,7 @@ using namespace std;
 class Test
 {
 	private:
+	
 	static const int SIZE = 100;
 	int *_pBuffer {nullptr};
 

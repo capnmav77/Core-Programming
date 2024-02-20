@@ -8,7 +8,7 @@ class safearay {
       
    public:
       safearay() {
-         register int i;
+         int i;
          for(i = 0; i < SIZE; i++) {
            arr[i] = i;
          }
@@ -21,7 +21,7 @@ class safearay {
             return arr[0];
          }
          
-         return arr[i];
+         return arr[i+2];
       }
 };
 

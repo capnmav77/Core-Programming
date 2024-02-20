@@ -4,10 +4,7 @@
 using namespace std;
 
 // defining of the Parent class
-class Parent
-
-{
-
+class Parent{
 public:
 	// defining the overridden function
 	void Print_Mesg ()

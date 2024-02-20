@@ -9,10 +9,10 @@ class SmartPointer
 
 public:
     //constructor
-    explicit SmartPointer(int *p = NULL) { ptr = p; }
+    explicit SmartPointer(int *p = NULL) { cout<<"init the pointer"; ptr = p; }
 
     //destructor
-    ~SmartPointer() { delete (ptr); }
+    ~SmartPointer() { cout<<"deleting the pointer"; delete (ptr); }
 
     //overloading dereferencing operator
     int &operator*() { return *ptr; }

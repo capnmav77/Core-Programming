@@ -22,15 +22,14 @@ namespace ns
         cout << "The value of ns::var is --> " << ns::var << endl;
 
         // Calling var present inside this function.
-        cout << "The value of var is --> " <<
-            var << endl;
+        cout << "The value of var is --> " << var << endl;
     }
 }
 
 int main() 
 {
     // Running the function print_numbers.
-    ns::print_numbers();
+    ns::print_numbers();// prints 10, 100, 1000 as the values of the variables var in the global namespace, ns and inside the function print_numbers respectively.
 
     return 0;
 }
