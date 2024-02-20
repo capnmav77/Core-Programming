@@ -4,34 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "118a86565bf300d6",
+        "id": "87da361a48a97d4e",
         "type": "tabs",
         "children": [
           {
-            "id": "c462909ba49cc63a",
+            "id": "a73d6125348bbea0",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "image",
               "state": {
-                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf"
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "416491f19df89ffd",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8bfa1b00b1fec8d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Revision.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/Pasted image 20240220173335.png"
               }
             }
           }
@@ -102,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
+                "file": "Images/Pasted image 20240220173335.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
+                "file": "Images/Pasted image 20240220173335.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf"
+                "file": "Images/Pasted image 20240220173335.png"
               }
             }
           }
@@ -163,13 +145,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c462909ba49cc63a",
+  "active": "ed19153f690dc456",
   "lastOpenFiles": [
+    "Untitled",
     "Generic Prog/Unit-01/Class Notes/Revision.md",
-    "Pasted image 20240220173718.png",
-    "Pasted image 20240220173629.png",
     "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
-    "Pasted image 20240220173335.png",
+    "Images/Pasted image 20240220173718.png",
+    "Images/Pasted image 20240220173629.png",
+    "Images/Pasted image 20240220173335.png",
     "Generic Prog/Unit-02/Notes/Name binding and Dependent names.md",
     "Generic Prog/Unit-02/Programs/Name binding and dependent names/a.exe",
     "Generic Prog/Unit-02/Programs/Name binding and dependent names/factorialVarTEmp.cpp",
