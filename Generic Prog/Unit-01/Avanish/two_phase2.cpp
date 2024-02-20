@@ -13,7 +13,7 @@ struct parser : base_parser<T>
 {
 	void parse()
 	{
-		this->init();
+		base_parser<T>::init();
 		std::cout << "parse\n";
 	}
 };

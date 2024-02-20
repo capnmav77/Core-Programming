@@ -1,3 +1,4 @@
+#include<iostream>
 template <typename T>
 struct wrapper {};
 template <int N>
@@ -15,12 +16,8 @@ struct manyfold_wrapper<0>
 };
 int main()
 {
-	std::cout <<
-	typeid(manyfold_wrapper<0>::value_type).name() << '\n';
-	std::cout <<
-	typeid(manyfold_wrapper<1>::value_type).name() << '\n';
-	std::cout <<
-	typeid(manyfold_wrapper<2>::value_type).name() << '\n';
-	std::cout <<
-	typeid(manyfold_wrapper<3>::value_type).name() << '\n';
+	std::cout <<typeid(manyfold_wrapper<0>::value_type).name() << '\n';
+	std::cout <<typeid(manyfold_wrapper<1>::value_type).name() << '\n';
+	std::cout <<typeid(manyfold_wrapper<2>::value_type).name() << '\n';
+	std::cout <<typeid(manyfold_wrapper<3>::value_type).name() << '\n';
 }
