@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "4c761b8546811060",
+        "id": "87da361a48a97d4e",
         "type": "tabs",
         "children": [
           {
-            "id": "6c8f8f554fc713b9",
+            "id": "a73d6125348bbea0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
-                "mode": "source",
-                "source": false
+                "file": "Images/Pasted image 20240220173335.png"
               }
             }
           }
@@ -86,7 +84,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
+                "file": "Images/Pasted image 20240220173335.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +101,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md",
+                "file": "Images/Pasted image 20240220173335.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +124,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Generic Prog/Unit-01/Class Notes/Overview.md"
+                "file": "Images/Pasted image 20240220173335.png"
               }
             }
           }
@@ -147,19 +145,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6c8f8f554fc713b9",
+  "active": "ed19153f690dc456",
   "lastOpenFiles": [
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameterpack2.cpp",
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameter_exp_packs.exe",
-    "Generic Prog/Unit-01/PROGRAMS/Parameter Packs/parameter_exp_packs.cpp",
-    "Generic Prog/Unit-01/Avanish/template_arg_list.exe",
-    "Generic Prog/Unit-01/Avanish/member_initializer_list.exe",
-    "Generic Prog/Unit-01/Avanish/tempCodeRunnerFile.cpp",
-    "Generic Prog/Unit-01/Avanish/base_specifier_list.exe",
-    "Generic Prog/Unit-01/Avanish/initializer_list.exe",
-    "Generic Prog/Unit-01/Avanish/unary_lfold1.cpp",
-    "Generic Prog/Unit-01/Avanish/unary_lfold.cpp",
-    "Generic Prog/Unit-01/Avanish/template_arg_list.cpp",
+    "Generic Prog/Unit-02/Slides/GP Unit 2 till Feb 13.pdf",
+    "Generic Prog/Unit-01/PROGRAMS/TemplateProg/Non_type_template.exe",
+    "Untitled",
+    "Generic Prog/Unit-01/Class Notes/Revision.md",
+    "Generic Prog/Unit-01/Anand Ms slides and Programs/GP Unit 1 complete.pdf",
+    "Images/Pasted image 20240220173718.png",
+    "Images/Pasted image 20240220173629.png",
+    "Images/Pasted image 20240220173335.png",
+    "Generic Prog/Unit-02/Notes/Name binding and Dependent names.md",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/a.exe",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/factorialVarTEmp.cpp",
+    "Generic Prog/Unit-02/Programs/a.exe",
+    "Generic Prog/Unit-02/Programs/Factorial.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase3.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase2.cpp",
+    "Generic Prog/Unit-02/Programs/Name binding and dependent names/two_phase.cpp",
+    "Untitled.md",
+    "Images/Pasted image 20240220055111.png",
+    "Generic Prog/Unit-01/Class Notes/Overview.md",
+    "().md",
+    "Images/Pasted image 20240220035642.png",
+    "Images/Pasted image 20240220031021.png",
     "Generic Prog/GP pro/MMT.md"
   ]
 }
