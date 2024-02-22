@@ -119,6 +119,11 @@ using namespace std;
 
 using swap_fn = void(*)(void*, int const, int const);
 using compare_fn = bool(*)(void*, int const, int const);
+/*In the expression "bool()(void, int const, int const)", the "bool(*)" represents a function pointer type. More specifically, it indicates that the function pointer points to a function that returns a boolean value.
+Here's a breakdown of the components:
+"bool": This specifies the return type of the function. In this case, it indicates that the function should return a boolean value (true or false).
+"(* )": This is the syntax for declaring a function pointer. It is followed by the name of the function pointer.
+"void*, int const, int const": These are the parameter types of the function that the pointer points to. In this case, the function is expected to take a void pointer and two constant integers as parameters.*/
 
 int partition(void* arr, int const low, int const high,
 		compare_fn fcomp, swap_fn fswap)

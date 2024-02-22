@@ -12,7 +12,7 @@ public:
 		z = 0;
 	}
 
-	// Constructor delegation
+	// Constructor delegation  i.e calling one constructor from another in order to avoid code duplication
 	A(int z) : A()
 	{
 		this->z = z; // Only update z

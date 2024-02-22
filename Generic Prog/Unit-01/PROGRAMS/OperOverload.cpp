@@ -1,13 +1,5 @@
 #include<iostream>
-#include<vector>
-#include<string>
-#include<map>
-#include<set>
-#include<queue>
-#include<stack>
-#include<algorithm>
-#include<cmath>
-#include<cstdio>
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -48,6 +40,10 @@ class Largest
 
 int main()
 {
+    Count c;
+    cout<<c.get()<<endl;
+    c++;
+    cout<<c.get()<<endl;
     
     return 0;
 }

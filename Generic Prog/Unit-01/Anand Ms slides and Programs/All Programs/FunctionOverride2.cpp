@@ -19,7 +19,7 @@ public:
 		cout << "Derived Function" << endl;
 
 		// call of overridden function
-		Parent::My_Print();
+		Parent::My_Print(); // prints "Base Function" because it is calling the base class function i.e My_Print in the parent class or base class
 	}
 };
 

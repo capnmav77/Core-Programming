@@ -10,17 +10,17 @@ public:
         return a+b;
     }
 
-    template<typename U> // the compiler automatically deduces the type of U
+    template<typename U> // the compiler automatically deduces the type of U //implicit type deduction
     U solve(U const a, U const b) {
         cout<<"Here"<<endl;
         return a+b;
     }
-    template<typename R>
+    template<typename R> // the compiler automatically deduces the type of U //implicit type deduction
     R soln(R const a, R const b, R const c);
 };
 
 template<typename T>
-template<typename R>
+template<typename R> // the compiler automatically deduces the type of U //implicit type deduction*
 R Solution<T>::soln(R const a, R const b, R  const c) {
     cout<<"Here"<<endl;
     return a+b+c;
