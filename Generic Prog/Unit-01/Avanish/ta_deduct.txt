@@ -1,0 +1,26 @@
+T
+const T
+volatile T
+T&
+T&&
+T*
+T[10]
+A<T>
+C(*)(T)
+T(*)()
+T(*)(U)
+T C::*
+C T::*
+T U::*
+T (C::*)()
+C (T::*)()
+D (C::*)(T)
+C (T::*)(U)
+T (C::*)(U)
+T (U::*)()
+T (U::*)(V)
+E[10][i]
+B<i>
+TT<T>
+TT<i>
+TT<C>
