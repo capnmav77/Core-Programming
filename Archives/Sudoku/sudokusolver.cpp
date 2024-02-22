@@ -115,8 +115,6 @@ class Board : public Solver {
 
     public:
 
-
-
     void init_board(){
         vector<vector<int>> bord(9,vector<int>(9,-1));
         brd = bord;
@@ -145,6 +143,22 @@ class Board : public Solver {
         display();
     }
 
+    void blank(){
+        brd =  {
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1},
+            {-1, -1, -1, -1, -1, -1, -1, -1, -1}
+        };
+
+        display();
+    }
+
     void solve(){
         solution(brd);
         cout<<endl;
@@ -153,11 +167,16 @@ class Board : public Solver {
 
 };
 
+
 int main(){
 
     Board board;
 
-    board.manual_board();
+    //board.init_board();
+
+    //board.manual_board();
+
+    board.blank();
 
     board.solve();
 
