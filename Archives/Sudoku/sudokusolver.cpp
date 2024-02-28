@@ -174,9 +174,9 @@ int main(){
 
     //board.init_board();
 
-    //board.manual_board();
+    board.manual_board();
 
-    board.blank();
+    //board.blank();
 
     board.solve();
 
