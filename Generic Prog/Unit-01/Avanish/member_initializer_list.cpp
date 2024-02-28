@@ -26,6 +26,18 @@ template<class...A> struct container : public baseC<A>...{
     container(): baseC<A>(12)...{
         printf("container ctor\n");
     }
+
+    container(): baseC<a1>(20){
+        printf("container ctor\n");
+    }
+
+    container(): baseC<a2>(22){
+        printf("container ctor\n");
+    }
+
+    container(): baseC<a3>(255){
+        printf("container ctor\n");
+    }
 };
 
 int main(void){
