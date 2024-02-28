@@ -21,3 +21,7 @@
 ### Variadic alias templates 
 - wherever there is a template , it can be aliased using 'using'
 - check out the slides 
+
+## DeclType Specifier 
+- it is used to deduce the **type from the expression** and assign the value to the variable in context of normal programming and not template
+- A
