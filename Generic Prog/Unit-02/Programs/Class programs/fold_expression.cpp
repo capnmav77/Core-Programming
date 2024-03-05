@@ -12,11 +12,12 @@ int sum(T... args){
 // variadic variable templates
 template < typename... T>  
 int foo(int a , T... args){
-    return (a + ... + args);
+    return (a + ... + args); //... is the fold operator which is used to expand the parameter pack
 }
 
 template<typename... Args>
 using int_foo = foo<int,Args...>; //error: expected unqualified-id before '...' token
+
 
 int main()
 {

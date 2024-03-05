@@ -127,7 +127,7 @@ void test_3()
    k(&C::x);
    k(&D::y);
    k(&D::z);
-}
+} 
 
 // m demonstrates the use of member function pointers as template parameters overloading
 // breakdown of syntax m(C (T::*)(U)) -> where C is the return type of the member function pointer, T is the class that the member function pointer is pointing to and U is the parameter type of the member function pointer

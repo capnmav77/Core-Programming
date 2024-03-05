@@ -9,7 +9,8 @@ struct foo
     static T data; // in regular class , the static member is attached to a type of the template , i.e a single copy is shared among all the similar templated type . 
 };
 
-template <typename T>T foo<T>::data = 0; 
+template <typename T>
+T foo<T>::data = 0; 
 
 
 int main()

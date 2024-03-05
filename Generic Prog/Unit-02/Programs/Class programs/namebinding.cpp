@@ -31,8 +31,10 @@ struct handler<int>
 
 int main()
 {
-    parser<int> p;
-    //handler <int> h;
-    p.parse();
+    handler<int> h;
+    //parser<int> p;
+    parser(handler<int>()) p;
+
+    //p.parse();
     return 0;
 }
