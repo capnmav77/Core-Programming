@@ -29,7 +29,7 @@ It can be used within a function template's noexcept specifier to declare that t
 */
 
 
-	A (A && a1) noexcept    // Move constructor
+	A (A && a1) noexcept    // Move constructor //rvalue reference
 	{
 		cout << "Move constructor" << endl;
 		this->ptr = a1.ptr;

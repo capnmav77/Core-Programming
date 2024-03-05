@@ -26,12 +26,7 @@ struct base_parser<int> //base specialization which helps in resolving the error
 		std::cout << "specialized init\n";
 	}
 };
-{
-	void init()
-	{
-		std::cout << "specialized init\n";
-	}
-};
+
 
 int main(void)
 {

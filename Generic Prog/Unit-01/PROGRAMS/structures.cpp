@@ -38,9 +38,9 @@ class Example
 
 int main()
 {
-    Example e1(10);
+    Example e1(10); // deep copy
     Example e2(e1); // deep copy
-    Example e3(12);
+    Example e3(12); // dynamic constructor
 
     e3 = e2; //shallow copy
     cout<<e2.a;

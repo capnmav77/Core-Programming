@@ -11,6 +11,7 @@ template <typename U>                            // (2)
 class MyFriend;
 
 class GrantingFriendshipAsClass {
+  //all members are private
 
   template <typename U> friend void myFriendFunction(U);
   template <typename U> friend class MyFriend;

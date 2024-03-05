@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 
-#pragma pack(1)
+#pragma pack(1) // this will pack the structure members in 1 byte boundary
 
 struct packed{
     char ch; 

@@ -11,7 +11,7 @@ constexpr T PI = T(3.14159265358979323846);
 struct math_constants
 {
     template<class T> //better because it can be specific to a certain type
-    static constexpr T PI = T(3.14159265358979323846);
+    static constexpr T PI = T(3.14159265358979323846); //is it typecasting or is it a function call ? ans = it is a typecasting
 
 };
 

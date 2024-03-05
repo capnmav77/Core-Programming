@@ -48,7 +48,7 @@
 - program [environ.c ]
 	- extern char **environ
 
-### Namespace 
+### Namespace ****
 - declarative region that provides a scope to the identifiers inside it.
 - here ": :" is the scope resolution specifier that is used to access the members inside the namespace 
 - check out namesp.cpp
@@ -396,4 +396,555 @@ int count_if(Input start, Input end, Predicate p) {
 
 #### Template Parameter pack -> variadic template 
 - discussed in unit - 2
+
+
+
+
+
+- ## Variadic templates
+	- they are class or function templates that allow arbitrary number of arguments to be passed . they provide type safety and flexibility
+	-  enable defining data structures with variable number of arguments . 
+	- they are implemented recursively and it happens using parameter pack expansion
+	- there is always a base case to be called because it cannot handle the base case 
+	- As a result, min(1, 5, 3, -4, 9) expands to min(1, min(5, min(3, min(-4, 9)))).
+	- but there is no function being called as it is subbed in inline . 
+- ## Parameter packs
+	- they accept zero , one or more parameters 
+	- number of args can be retrieved using sizeof oper , which can be later on used similarly in the below case :
+	- ![[Pasted image 20240228210316.png]]
+	- the semantically equivalent program would be to keep a base case that overrides the one at the end in order to skip the usage of sizeof operator . 
+	- ![[Pasted image 20240228210503.png]]
+		- Notice 
+			- sizeof...(args) -> the function parameter pack  == sizeof...(Args) -> the template parameter pack . 
+		- the function that takes parameter pack as input can be specified to take sets of elements => <int , int, int , ...> 
+		- ![[Pasted image 20240228211654.png]]
+		- however when the types are different args1 will pack 1 ,2 and args2 will contain double .
+		- however when asserting like -> same size etc. then things change 
+		- ![[Pasted image 20240228212020.png]]
+	- multiple parameter packs are not specific to variadic function templates . they can be used for variadic class templates
+		- for passing functions as parameters we need
+			- a type template parameter for the return type of the funciton 
+			- a template parameter pack for the parameter types of the function 
+			- ![[Pasted image 20240228220401.png]]
+			- where typename R1 is used for specification of the return type of function 1 
+			- the typename parameter pack is used to specify the parameter types for function 1
+			- similar concepts apply for function 2 
+			- in order to call these functions : 
+				  func_pair<bool(int, int), bool(int, int)> myPair;
+				  modify the template argument list in order to checkout multiple ways 
+
+		- ## Template parameter pack 
+			- a template param pack is template parameter that represents any number of template parameters . 
+		- types of template parameter packs
+			- type 
+				- zero or more type template parameters 
+				- ![[Pasted image 20240228222239.png]]
+			- nontype
+				- it represents the actual rvalues given to the functions 
+				- ![[Pasted image 20240228222307.png]]
+			- template template parameter packs
+				- in cases where the template parameters types can deduced  -> function , class template etc. leave it 
+				- template parameter pack should be the last template parameter that is supposed to be init 
+				- ![[Pasted image 20240228222430.png]]
+				- default args can't be used for template parameter packs . 
+	- ## Function parameter pack 
+		- the template argument list can be modified in order to pass the parameters as groups 
+```
+		- #include <cassert>
+
+#include <iostream>
+
+  
+  
+
+// an assertion is a statement used to state or assert that the expression
+
+// must be true
+
+template<class...A, class...B>
+
+void func(A...arg1,int sz1, int sz2, B...arg2)  
+
+{
+
+   assert( sizeof...(arg1) == sz1);
+
+   assert( sizeof...(arg2) == sz2);
+
+}
+
+  
+
+int main(void)
+
+{
+
+   //A:(int, int, int), B:(int, int, int, int, int)
+
+   func<int,int>(1,2,2,6,5,1,2,3,4,5); // here we are using the < > in order to specify the grouping of parameters
+
+  
+
+   //A: empty, B:(int, int, int, int, int)
+
+   func(0,5,1,2,3,4,5);
+
+   return 0;
+
+}
+```
+
+- Default arguments can't be used for template parameter pack 
+	- ![[Pasted image 20240228223413.png]]
+- 
+  
+  ## Pack expansion contexts 
+	- expression list expansion
+		- the pack expansion args can be placed anywhere and the rest is computed 
+```
+		- #include <cstdio>
+
+#include <cassert>
+
+  
+
+template<class...A> void func1(A...arg)
+
+{
+
+    assert(false);// assert is used to
+
+}
+
+  
+
+void func1(int a1, int a2, int a3, int a4, int a5, int a6)
+
+{
+
+    printf("call with(%d,%d,%d,%d,%d,%d)\n",a1,a2,a3,a4,a5,a6);
+
+}
+
+  
+
+template<class...A>
+
+int func(A...args)
+
+{
+
+    int size = sizeof...(A);
+
+    switch(size){
+
+        case 0: func1(99,99,99,99,99,99);
+
+        break;
+
+        case 1: func1(99,99,args...,99,99,99);
+
+        break;
+
+        case 2: func1(99,99,args...,99,99);
+
+        break;
+
+        case 3: func1(args...,99,99,99);
+
+        break;
+
+        case 4: func1(99,args...,99);
+
+        break;
+
+        case 5: func1(99,args...);
+
+        break;
+
+        case 6: func1(args...);
+
+        break;
+
+        default:
+
+        func1(0,0,0,0,0,0);
+
+    }
+
+    return size;
+
+}
+
+  
+
+int main(void)
+
+{
+
+    func();
+
+    func(1);
+
+    func(1,2);
+
+    func(1,2,3);
+
+    func(1,2,3,4);
+
+    func(1,2,3,4,5);
+
+    func(1,2,3,4,5,6);
+
+    func(1,2,3,4,5,6,7);
+
+    return 0;
+
+}
+```
+
+
+- Initializer List 
+	- pack expansion args -> is in the initializer list 
+```
+	- #include <iostream>
+
+using namespace std;
+
+  
+
+void printarray(int arg[], int length)
+
+{
+
+    for(int n=0; n<length; n++)
+
+    {
+
+        printf("%d ",arg[n]);
+
+    }
+
+    printf("\n");
+
+}
+
+  
+
+template<class...A> void func(A...args)
+
+{
+
+    const int size = sizeof...(args) +5;
+
+    printf("size %d\n", size);
+
+    int res[sizeof...(args)+5]={99,98,args...,97,96,95};
+
+    printarray(res,size);
+
+}
+
+  
+
+int main(void)
+
+{
+
+    func();
+
+    func(1);
+
+    func(1,2);
+
+    func(1,2,3);
+
+    func(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+
+    return 0;
+
+}
+```
+
+the initalizer list is used to initialize a list /array and add the corresponding elements to it . 
+
+
+- BASE SPECIFIER LIST 
+	- the pack expansion is used to expand other possible structures in order to use them in the correspondingparameter packing 
+```
+	- #include <iostream>
+
+using namespace std;
+
+  
+
+struct a1{};
+
+struct a2{};
+
+struct a3{};
+
+struct a4{};
+
+  
+
+template<class X> struct baseC{
+
+    baseC() {printf("baseC primary ctor\n");}
+
+};
+
+template<> struct baseC<a1>{
+
+    baseC() {printf("baseC a1 ctor\n");}
+
+};
+
+template<> struct baseC<a2>{
+
+    baseC() {printf("baseC a2 ctor\n");}
+
+};
+
+template<> struct baseC<a3>{
+
+    baseC() {printf("baseC a3 ctor\n");}
+
+};
+
+template<> struct baseC<a4>{
+
+    baseC() {printf("baseC a4 ctor\n");}
+
+};
+
+  
+
+template<class...A>
+
+struct container : public baseC<A>...{
+
+    container(){
+
+        printf("container ctor\n");
+
+    }
+
+};
+
+  
+
+int main(void){
+
+    container<a1,a2,a3,a4> test;
+
+    return 0;
+
+}
+```
+- Member initializer list 
+	- the constructor init is expanded to include the call for each base class 
+```
+	- #include <iostream>
+
+using namespace std;
+
+  
+
+void printarray(int arg[], int length)
+
+{
+
+    for(int n=0; n<length; n++)
+
+    {
+
+        printf("%d ",arg[n]);
+
+    }
+
+    printf("\n");
+
+}
+
+  
+
+template<class...A> void func(A...args)
+
+{
+
+    const int size = sizeof...(args) +5;
+
+    printf("size %d\n", size);
+
+    int res[sizeof...(args)+5]={99,98,args...,97,96,95};
+
+    printarray(res,size);
+
+}
+
+  
+
+int main(void)
+
+{
+
+    func();
+
+    func(1);
+
+    func(1,2);
+
+    func(1,2,3);
+
+    func(1,2,3,4,5,6,7,8,9,(int)10.00,11,12,13,14,15,16,17,18,19,20);
+
+    return 0;
+
+}
+```
+
+## Partial specialization 
+- ![[Pasted image 20240228231906.png]]
+	- when the class template is instantiated with list of args. the partial specialization is matched in all cases where there are 1 or more elems. in that case template parameter B holds the first parameter and pack exp C contains the rest of the argument . 
+- Parameter expansion 
+	- is the process of expansion of the variadic templates by calling it recursively in order to process one argument at a time 
+- Partial specialization 
+	- it is used to access a specific part of a variadic templates 
+		- ![[Pasted image 20240229010829.png]]
+		- accessing the elements using .rest.value is cumbersome 
+	- We use fold operation
+		- IT'S A WAY OF REDUCING THE OPERATIONS OVER A BINARY PACK 
+		- provide a easy way to apply a binary operator to a pack . instead of doing a recursive call . 
+		- - **Syntax**: The syntax for a fold expression is `(pack op ...)` or `(init op ... op pack)` where `op` is a binary operator and `pack` is the parameter pack being expanded.
+		- **Types of Folds**:
+		    
+		    - **Left Fold (`(pack op ...)`)**: The binary operator is applied between the elements in the parameter pack from left to right.
+		    - **Right Fold (`(... op pack)`)**: The binary operator is applied from right to left.
+		    
+		- **Example**:
+		    
+		    - In your code, `return (a + ... + args);` represents a left fold where the `+` operator is applied between `a` and each element in `args` from left to right.
+		    - This expression effectively sums up all the arguments passed to the function `foo`.
+		- eg: 
+			- EARLIER 
+			- ![[Pasted image 20240229013728.png]]
+			- NOW : 
+```
+	TEMPLATE<typename T> 
+	int sum(T... args){
+		return (... + args); lfold
+	}
+```
+
+
+- ## Name binding 
+	- The term name binding refers to the process of finding the declaration of each name that is used within a template. There are two kinds of names used within a template: dependent names and non-dependent names
+	- Dependent Names:
+		Dependent names are bound at the point of template instantiation, not at the point of template definition.
+		They depend on template parameters, so their meaning can change depending on the template arguments.
+		Examples of dependent names include function calls with a dependent function name, and names from scopes that are visible inside the template's definition.
+	- Non-Dependent Names:
+		Non-dependent names are bound at the point of template definition and stay bound in every instantiation of that template.
+		They do not depend on template parameters, so their meaning does not change with template arguments.
+		Examples of non-dependent names include the name of the template and names declared in the template
+	- name lookup is performed differently 
+		- for dependent - point of template instantiation 
+		- for non-dependent - point of template defn
+	- 
+	  
+	  
+	  
+	  - DECLTYPE 
+		  - ![[Pasted image 20240229030454.png]]
+		  - .In summary, decltype is a type specifier used to deduce the type of an expression. It can be used in different contexts, but its purpose is for templates to determine the return type of a function and to ensure the perfect forwarding of it.
+	- Declval type operator
+		- it add's a rvalue reference to type template argument . 
+		- ![[Pasted image 20240229030733.png]]
+```
+#include <utility> // std::declval
+#include <iostream> // std::cout
+
+struct A {
+ virtual int value() = 0;
+};
+
+class B : public A {
+ int val_;
+public:
+ B(int i, int j) : val_(i * j) {}
+ int value() { return val_; }
+};
+
+int main() {
+ decltype(std::declval<A>().value()) a; // int a
+ decltype(std::declval<B>().value()) b; // int b
+ decltype(B(0, 0).value()) c; // same as above (known constructor)
+
+ a = b = B(10, 2).value();
+ std::cout << a << '\n';
+
+ return 0;
+}
+
+```
+
+### Friendfunction
+-  A friend function in C++ is a special type of function that has the ability to access private and protected members of a class, even though it is not a member of that class itself. This is achieved by declaring the function as a friend within the class definition. Friend functions are useful in scenarios where you need to perform operations on a class's private or protected members without making those members public or by creating a member function.
+
+### Declaration and Use
+```
+class Box {
+   double width; // private member
+
+public:
+   double length; // public member
+   // Declaration of a friend function
+   friend void printWidth(Box box);
+
+   void setWidth(double wid) {
+      width = wid;
+   }
+};
+
+```
+
+despite not being the member of the box class , the friend function can access the private vars of the box  -> width 
+
+```
+#include <iostream>
+using namespace std;
+
+class Box {
+   double width; // private member
+
+public:
+   double length; // public member
+   // Declaration of a friend function
+   friend void printWidth(Box box);
+
+   void setWidth(double wid) {
+      width = wid;
+   }
+};
+
+// Definition of the friend function
+void printWidth(Box box) {
+   // Because printWidth() is a friend of Box, it can directly access any member of this class
+   cout << "Width of box : " << box.width << endl;
+}
+
+int main() {
+   Box box;
+
+   // Set box width without using a member function
+   box.setWidth(10.0);
+
+   // Use friend function to print the width
+   printWidth(box);
+
+   return 0;
+}
+
+```
 
