@@ -17,7 +17,7 @@ private:
 template <typename T>
 class GrantingFriendshipAsClassTemplate {
 
-  friend void myFriendFunction<>(int);
+  friend void myFriendFunction<T>(T);
   friend class MyFriend<int>;
   friend class MyFriend<T>;                        // (3)
 

@@ -41,7 +41,7 @@ It can be used within a function template's noexcept specifier to declare that t
 int main ()
 {
 	A a1;
-	vector <A> v1;
+	vector<A> v1;
 
 	v1.push_back (A()); // push_back() makes a copy of the object that
 			    // is being pushed back.

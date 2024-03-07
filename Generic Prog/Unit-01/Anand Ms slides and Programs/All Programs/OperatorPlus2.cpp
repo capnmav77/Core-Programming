@@ -13,9 +13,9 @@ public:
 	void print() { cout << real << " + i" << imag << endl; }
 	// The global operator function is made friend of this
 	// class so that it can access private members
-	friend Complex operator+(Complex const& c1, Complex const& c2);
+	friend Complex operator+(Complex c1, Complex  c2);
 };
-Complex operator+(Complex const& c1, Complex const& c2)
+Complex operator+(Complex c1, Complex c2)
 {
 	return Complex(c1.real + c2.real, c1.imag + c2.imag);
 }

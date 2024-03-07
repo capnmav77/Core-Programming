@@ -13,11 +13,15 @@ class Distance
 
     public:
         Distance() : meter(0) {}
-        
+
+      int gemme()
+      {
+        return meter;
+      }  
 };
 
 // friend function definition
-int addFive(Distance d) 
+int addFive(Distance &d) 
 {
 
     //accessing private members from the friend function
@@ -28,6 +32,6 @@ int addFive(Distance d)
 int main() 
 {
     Distance D;
-    cout << "Distance: " << addFive(D);
+    cout << "Distance: " << addFive(D)<<" "<<D.gemme();
     return 0;
 }
