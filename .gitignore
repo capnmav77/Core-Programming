@@ -4,3 +4,6 @@
 *.json
 Images/
 .obsidian/
+.vs
+.user
+.filters

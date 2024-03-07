@@ -4,12 +4,12 @@
 template <typename T>
 void Function(T Param) 
 {
-  if constexpr (std::is_integral_v<T>) 
+  if( constexpr std::is_integral<T>::value) 
   {
     std::cout << "Integer!\n";
   }
 
-  if constexpr (std::is_floating_point_v<T>) 
+  if(constexpr std::is_floating_point<T>::value) 
   {
     std::cout << "Floating point number!\n";
   }
