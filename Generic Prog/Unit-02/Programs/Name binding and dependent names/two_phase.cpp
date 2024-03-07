@@ -3,7 +3,7 @@
 template <typename T>
 struct base_parser
 {
-	void init()
+	void init() //non dependent name
 	{
 		std::cout << "init\n";
 	}

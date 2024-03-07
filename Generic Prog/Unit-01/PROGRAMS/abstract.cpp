@@ -34,7 +34,6 @@ int main()
     delete b;
     getchar();
     return 0;
-
     //virtual function, binded at runtime
     return 0;
 }

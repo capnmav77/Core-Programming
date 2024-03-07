@@ -25,16 +25,17 @@ public:
 	A (A && a1)  noexcept    // Move constructor
 	{
 		cout << "Move constructor" << endl;
-		this->ptr = a1.ptr;
+		this->ptr = a1.ptr;// Transfer ownership of the pointer why not use a1->ptr 
 		a1.ptr = nullptr;
 	}
-/*
+
 	A &operator=(A &&obj)   // Move assignment operator
 	{
 		cout << "Move assignment called" << endl;
+		this->ptr = obj.ptr;
 		return *this;
 	}
-*/
+
 
 };
 
@@ -45,8 +46,9 @@ int main ()
 	v1.push_back (A());
 	v1.push_back (a1);  // This results in Copy constructor being called
 
-	// std::move() is a function used to convert an lvalue reference 
-	// into the rvalue reference. 
- 	v1.push_back (move (a1));  // This calls move constructor
+	// // std::move() is a function used to convert an lvalue reference 
+	// // into the rvalue reference. 
+ 	// v1.push_back (move (a1));  // This calls move constructor
+	A a2 = a1; // This calls move assignment operator
 	return 0;
 }

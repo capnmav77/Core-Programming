@@ -38,9 +38,9 @@ class A{
             cout<<a<<" "<<b<<" "<<c<<endl;
         }
         // initializer List
-        A(int a , int b):a(a),b(b){ // this is called initializer list which is used to initialize the data members of the class a = a and b = b
-            this->a = a;
-            this->b = b;
+        A(int a , int b):a(a),b(b),c(10){ // this is called initializer list which is used to initialize the data members of the class a = a and b = b
+            // this->a = a;
+            // this->b = b;
         }
 };
 
@@ -48,7 +48,7 @@ class A{
 int main()
 {
 
-    A a = A(20);
+    A a = A(50);
     a.show();
     return 0;
 }

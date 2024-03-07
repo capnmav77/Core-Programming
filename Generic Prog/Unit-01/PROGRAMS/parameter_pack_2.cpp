@@ -13,7 +13,7 @@ struct a5{};
 template<class...X> struct baseC{};
 template<class...A1> struct container{};
 template<class...A,class...B,class...C>
-struct container<baseC<A,B,C...>...>:public baseC<A...>{};
+struct container<baseC<A,B,C...>...>:public baseC<A...>{}; // this is a recursive template which will keep on calling itself until the base case is reached
 
 int main()
 {
