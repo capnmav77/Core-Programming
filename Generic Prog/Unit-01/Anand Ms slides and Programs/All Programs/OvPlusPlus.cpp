@@ -20,7 +20,8 @@ class Count {
 
 
     // Overload ++ when used as postfix
-    void operator ++ (int) {
+    void operator ++ (int a) {
+        cout<<a<<endl;
         value++;
     }
 
@@ -38,6 +39,7 @@ int main() {
 
     // Call the "void operator ++ ()" function
     ++count1;
+        count1++;
 
     count1.display();
     return 0;

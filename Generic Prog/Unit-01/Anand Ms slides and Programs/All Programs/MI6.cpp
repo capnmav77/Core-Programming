@@ -22,6 +22,10 @@ class C: virtual public A
 };
 
 class D: public B, public C {
+	public:
+		D():A(10){
+			
+		}
 	};
 
 int main()

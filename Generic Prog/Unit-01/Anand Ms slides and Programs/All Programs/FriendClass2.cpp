@@ -38,6 +38,15 @@ class ClassB
 int main() 
 {
     ClassB objectB;
+    int *ptr;
+    char *ptr_1;
+
+    int arr[]={1,2,3,4,5,6,7,8,9,10,11,12};
+
+    long long *ptr_2;
+
+    cout<<sizeof(ptr)<< " "<<sizeof(ptr_1)<<" "<<sizeof(arr)<<endl;
+    
     cout << "Sum: " << objectB.add();
     return 0;
 }

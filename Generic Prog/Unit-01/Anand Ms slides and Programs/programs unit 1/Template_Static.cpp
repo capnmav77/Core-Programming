@@ -7,7 +7,8 @@ struct foo
 	static T data;
 }; 
 
-template <typename T> T foo<T>::data = 0; 
+template <typename T> 
+T foo<T>::data = 0; 
 int main() 
 { 
 	foo<int> a; 
