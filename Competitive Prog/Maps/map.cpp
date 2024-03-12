@@ -17,8 +17,8 @@ int main()
 
     //key value pair
     m[1] = "abc";
-    m[2] = "def";
-    m[3] = "ghi";
+    m[3] = "def";
+    m[2] = "ghi";
 
     //or here's map insert function with make_pair
     //make_pair is used to make a pair of key and value

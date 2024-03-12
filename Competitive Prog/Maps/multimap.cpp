@@ -24,6 +24,8 @@ int main()
         cout<<it->first<<" "<<it->second<<endl;
     }
 
-    
+    //basically multimap allows the same key to be inserted multiple times but with different values 
+
+
     return 0;
 }
