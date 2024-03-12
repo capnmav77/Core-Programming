@@ -28,6 +28,8 @@ int main()
     //or here's map insert function without make_pair with curly braces
     m.insert({5, "mno"}); 
     m.insert({6, "pqr"});
+
+    m.insert({1, "stu"});
     
 
     //accessing the map

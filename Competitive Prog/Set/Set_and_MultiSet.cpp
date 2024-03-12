@@ -2,12 +2,37 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//let's write a templatized function to print the set
+template<typename T>
+void printSet(const set<T>& s) {
+    
+    cout << "Set: " << endl;
 
+    typename set<T>::iterator it;
 
-int main()
-{
+    for(it = s.begin(); it != s.end(); ++it) {
+        cout << *it << endl;
+    }
 
-    //declaration of set 
+}
+
+//let's write a templatized function to print the multiset
+template<typename T>
+void printMultiset(const multiset<T>& ms) {
+
+    cout << "MultiSet: " << endl;
+
+    typename multiset<T>::iterator it;
+
+    for(it = ms.begin(); it != ms.end(); ++it) {
+        cout << *it << endl;
+    }
+
+}
+
+int main() {
+
+    // declaration of set 
     set<int> s;
     s.insert(1);
     s.insert(2);
@@ -15,11 +40,8 @@ int main()
     s.insert(5);
     s.insert(3);
 
-    cout<<"Set: "<<endl;
-    set<int>::iterator it;
-    for(it = s.begin() ; it != s.end() ; ++it){
-        cout<<*it<<endl;
-    }
+    //print the set
+    printSet(s);
 
     // declaration of multiset 
     multiset<int> ms;
@@ -30,11 +52,8 @@ int main()
     ms.insert(5);
     ms.insert(3);
 
-        cout<<"MultiSet: "<<endl;
-    multiset<int>::iterator it2;
-    for(it2 = ms.begin() ; it2 != ms.end() ; ++it2){
-        cout<<*it2<<endl;
-    }
+    //print the multiset
+    printMultiset(ms);
 
     return 0;
 }
