@@ -21,7 +21,7 @@ class Sound {};
 template <typename T>
 void Function(T Param) 
 {
-  if constexpr (is_renderable<T>::value) 
+  if (is_renderable<T>::value) 
   {
     Param.Render();
   } 

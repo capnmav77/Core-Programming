@@ -1,2 +1,15 @@
 ﻿  C++.cpp
-  C++.vcxproj -> C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\Debug\C++.exe
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(22,21): error C2039: 'filesystem': is not a member of 'std'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\sstream(20): message : see declaration of 'std'
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(22,31): error C2878: 'filesystem': a namespace or class of this name does not exist
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(50,10): error C2653: 'fs': is not a class or namespace name
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(50,14): error C3861: 'exists': identifier not found
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(54,10): error C2653: 'fs': is not a class or namespace name
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(54,14): error C3861: 'is_directory': identifier not found
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(58,9): error C2653: 'fs': is not a class or namespace name
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(58,13): error C3861: 'current_path': identifier not found
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(69,26): error C2653: 'fs': is not a class or namespace name
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(69,30): error C3861: 'current_path': identifier not found
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(90,33): error C2653: 'fs': is not a class or namespace name
+C:\Users\Meowmaster\Desktop\PROject\Core-Programming\Generic Prog\Unit-01\Avanish\C++\C++.cpp(90,37): error C3861: 'current_path': identifier not found
