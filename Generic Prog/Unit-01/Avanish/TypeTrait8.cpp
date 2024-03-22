@@ -1,9 +1,8 @@
 #include <type_traits>
 #include <iostream>
 
-using std::enable_if_t, std::is_class_v;
-template <typename T,
-          enable_if_t<is_class_v<T>, int> = 0>
+using std::enable_if, std::is_class;
+template <typename T, enable_if<is_class<T>::value, int>::type = 0>
 void Function(T Arg) {
   std::cout << "That was a class\n";
 }
@@ -11,7 +10,7 @@ void Function(T Arg) {
 template <typename T,
           enable_if_t<!is_class_v<T>, int> = 0>
 void Function(T Arg) {
-  std::cout << "That wasn't\n";
+  // std::cout << "That wasn't\n";
 }
 
 class Character {};
