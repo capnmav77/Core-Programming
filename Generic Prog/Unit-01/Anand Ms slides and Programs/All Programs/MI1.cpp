@@ -24,6 +24,6 @@ class C: public B, public A // Note the order
 int main()
 {
 	C c;
-        c.x = 9;
+    c.x = 9;
 	return 0;
 }

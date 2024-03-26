@@ -12,7 +12,7 @@ public:
 	point &operator=(const point &rhs);
 	void SetPoint (const int _x, const int _y);
 	void PrintPoint ();
-	point (const point& obj)  // The copy constructor
+	explicit point (const point& obj)  // The copy constructor
 	{
       		cout<<"Copy constructor is called"<<endl;
 		*x = *(obj.x);
@@ -72,7 +72,7 @@ int main ()
 	p1.SetPoint (61,65); // we have set the values here which is a deep copy
 	p2 = p1; //shallow copy as we have constructed the values in the main function
         cout << "Before p3 " << endl;
-    point p3 = p2; //copy constructor is called . Deep copy as we have constructed the values in the copy constructor
+    point p3(p2); //copy constructor is called . Deep copy as we have constructed the values in the copy constructor
 	p1.SetPoint (97, 98); // we have set the values here which is a deep copy because we have constructed the values in the member function
 	p1.PrintPoint();
 	p2.PrintPoint();

@@ -52,7 +52,7 @@ template<class T> void h1(A<T>)
 	cout << "A<T>" << endl; 
 };
 
-
+//done
 void test_1() 
 {
    A<char> a;
@@ -78,9 +78,10 @@ template<class T, class U> void j(T(*)(U))
 	cout << "T(*) (U)" << endl; 
 };
 
-
+//done
 void test_2() 
 {
+   //function pointer
    C (*c_pfunct1)(int);
    C (*c_pfunct2)(void);
    int (*c_pfunct3)(int);
@@ -104,6 +105,7 @@ template<class T, class U> void k(T U::*)
 	cout << "T U::*" << endl; 
 };
 
+//ok ig
 void test_3() 
 {
    k(&C::x);
@@ -146,6 +148,7 @@ template<class T, class U, class V> void m(T (U::*)(V))
 	cout << "T (U::*)(V)" << endl; 
 };
 
+//done
 void test_4() 
 {
    int (C::*f_membp1)(void);
@@ -176,7 +179,7 @@ template<int i> void n(B<i>)
 	cout << "B<i>" << endl; 
 };
 
-
+//Done
 void test_5() 
 {
    C array[10][20];
@@ -209,7 +212,7 @@ void test_6()
    p1(a);
    p2(b);
    p3(c);
-}
+}  
 
 int main(void) 
 { 

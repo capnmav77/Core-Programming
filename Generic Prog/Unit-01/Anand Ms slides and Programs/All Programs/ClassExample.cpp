@@ -24,8 +24,8 @@ double Box::getVolume(void) {
    return length * breadth * height;
 }
 
-void Box::setLength( double len ) {
-   length = len;
+void Box::setLength( double l ) {
+   length = l;
 }
 void Box::setBreadth( double bre ) {
    breadth = bre;

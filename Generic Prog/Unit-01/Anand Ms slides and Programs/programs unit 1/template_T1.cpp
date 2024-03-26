@@ -1,7 +1,7 @@
 template <typename T> 
 struct foo 
 {
-	protected: 
+
 		using value_type = T; 
 }; 
 template <typename T, typename U = typename T::value_type> 

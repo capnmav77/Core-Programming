@@ -16,7 +16,7 @@ public:
       age = person_age;
   }
   
-  Person(const Person& obj)
+  Person(const Person obj)
   {
       cout<<"Copy constructor is called"<<endl;
       name = obj.name;

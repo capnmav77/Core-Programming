@@ -9,6 +9,8 @@ int main()
    // auto b;
    auto fl = 3.24;
 
+   auto a;
+
    cout << "The variable b is of type: " << typeid(b).name() << endl;
    cout << "The variable fl is of type: " << typeid(fl).name() << endl;
    return 0;

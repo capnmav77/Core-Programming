@@ -5,6 +5,7 @@ using namespace std;
 
 class Parent {
 public:
+	int a=2;
 	void PrintMesg()
 	{
 		cout << "Base Function" << endl;
@@ -13,15 +14,18 @@ public:
 
 class Child : public Parent {
 public:
+	int a= 10;
 	void PrintMesg()
 	{
 		cout << "Derived Function" << endl;
 	}
+	
 };
 
 int main()
 {
 	Child Child_Derived;
+	Child_Derived.a = 0364;
 
 	// pointer of Parent type that points to derived class object
 	Parent* ptr = &Child_Derived;
@@ -34,6 +38,8 @@ int main()
 	// therefore the function of the base class is called and not the function of the derived class
 	// this is because the function of the base class is not overridden by the function of the derived class
 	// therefore the function of the base class is called
+
+	cout<<ptr->a<<endl;
 
 	return 0;
 }
