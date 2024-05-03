@@ -28,6 +28,7 @@
             cout << *it << " ";
         }
         cout << endl << endl;
+        // output : 20 30 40 50
 
 
         // remove element with value 50 in s1
@@ -38,6 +39,8 @@
         {
             cout << *it << " ";
         }
+
+        //output : 20 30 40
 
         return 0;
     }

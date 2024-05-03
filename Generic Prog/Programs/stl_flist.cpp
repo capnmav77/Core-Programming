@@ -21,6 +21,8 @@
 
         cout << endl;
 
+        //output: 7 6 1 2 3 4 5
+
         // deleting first value using pop_front()
         fr_lst.pop_front();
 
