@@ -31,6 +31,9 @@
         {	
             cout << *it << " ";
         }
+        //funtion for pop_back
+        dq.pop_back();
+        dq.pop_back();
 
         return 0;
     }

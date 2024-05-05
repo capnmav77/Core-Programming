@@ -26,8 +26,8 @@ int main(void) {
     // Calling the object like a normal function.
     // Here, we can see that we do not need to pass 10 again and again, 
     // demonstrating functors preserving the state.
-    cout << functor(4) << endl;
-    cout << functor(7) << endl;
+    cout << functor(4) << endl; //output : 14
+    cout << functor(7) << endl; //output : 17
 
     return 0;
 }

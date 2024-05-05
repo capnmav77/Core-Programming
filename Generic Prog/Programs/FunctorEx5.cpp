@@ -25,7 +25,7 @@ int main(void) {
     FunctorWithMemberVariables functor(100);
 
     // Calling the created object as a normal function.
-    double returnedSum = functor(12);
+    double returnedSum = functor(12); // 100 / 12 = 8.33333
 
     // Printing the value.
     cout << "The returned value is : " << returnedSum << endl;
