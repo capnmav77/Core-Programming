@@ -31,7 +31,7 @@ struct nth_type : nth_type<N-1,Ts...> //recursive class template where the first
 template <typename T, typename... Ts>
 struct nth_type<0,T,Ts...>
 {
-    using value_type = T;
+    using value_type = T; //alias template
     //std::cout<<"value_type = "<<value_type<<endl;
 };
 
