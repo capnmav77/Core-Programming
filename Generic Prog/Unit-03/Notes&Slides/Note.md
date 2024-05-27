@@ -144,7 +144,7 @@
                 
 
             - Associative containers : 
-                - implement sorted data structures that can be quickly searched , they are initially implemented as binary tree structures . results are in O(log n)
+                - implement sorted data structures that can be quickly searched , they are initially implemented as binary tree structures . results are in O(log n) , increment of iterator takes O(1) amortized time i.e on average
                     - eg: set , multiset , map , multimap
                 - Set 
                     - it's a set of unique keys that are sorted using Red-Black Tree

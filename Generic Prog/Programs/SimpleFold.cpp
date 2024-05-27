@@ -5,12 +5,12 @@ using namespace std;
  
 template<typename ...Args> auto sum(Args ...args) 
 { 
-    return (args + ... + 0); 
+    return (args + ... + 0); //binary right fold
 }
 
 template<typename ...Args> auto sum2(Args ...args) 
 { 
-    return (args + ...);
+    return (args + ...); // unary right fold
 }
 
 int main()

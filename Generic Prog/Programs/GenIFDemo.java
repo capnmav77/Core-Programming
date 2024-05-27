@@ -19,7 +19,7 @@ class MyClass<T extends Comparable<T>> implements MinMax<T>
 	{
 		T v = vals[0];
 		for(int i=1; i < vals.length; i++)
-			if(vals[i].compareTo(v) < 0) 
+			if(vals[i].compareTo(v) < 0) // if(vals[i] < v) returns 0 if equal, -1 if less than and 1 if greater than
 				v = vals[i];
 		return v;
 	}
